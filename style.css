@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.align {
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+  width: 150vh;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+body {
+  background-color: white;
+}
+
+.nav-list {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  padding-left: 50px;
+}
+.logo img {
+  width: 50px;
+}
+
+.right-part-nav {
+  width: 50%;
+  text-align: right;
+
+  padding: 20px;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 50px;
+  background-color: #d9d9d9;
+  border: none;
+  width: 100px;
+  font-size: 12px;
+}
+
+/* ********nabvar********  */
+
+/* *****loginpage***** */
+
+.first {
+  margin: auto;
+
+  width: 150vh;
+  height: 70vh;
+  border-radius: 30px;
+  background-color: #0d47a1;
+}
+.main {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  margin: auto;
+}
+
+.main-left {
+  width: 50%;
+}
+
+.main-right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  /* align-self: flex-end; */
+  margin-top: 50px;
+}
+
+.main img {
+  width: 90%;
+  margin-top: 60px;
+  margin-left: 40px;
+}
+
+/* ***loginformmm*** */
+.login-form {
+  max-width: 450px;
+  margin: auto;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #ffcf70;
+}
+
+.input-group {
+  margin-bottom: 10px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+}
+label {
+  color: #ccc;
+}
+
+.input-group button {
+  width: 30%;
+  background-color: #ffcf70;
+  color: black;
+  padding: 10px;
+  border: none;
+
+  border-radius: 15px;
+  font-size: 15px;
+  cursor: pointer;
+  /* font-size: 11px; */
+}
+
+.input-group button:hover {
+  background-color: grey;
+  border: 2px saddlebrown;
+}
+
+/* **********************NOTES************************************* */
+
+

@@ -1,0 +1,622 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+body {
+  background: #d9d9d9;
+  min-height: 100vh;
+}
+
+/* .fixx {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+} */
+
+/* for header */
+header {
+  background: #00122e;
+  position: absolute;
+  top: 0;
+  left: 250px;
+  width: 85%;
+  height: 50px;
+  text-align: center;
+  color: #fff;
+
+  align-items: center;
+  padding: 20px 10px;
+  z-index: 5000;
+}
+
+/* For navbar */
+
+nav {
+  background: #0d47a1;
+  height: 100vh;
+  width: 250px;
+  display: sticky;
+  left: 0;
+  top: 0;
+  padding-top: 30px;
+
+  overflow: hidden;
+}
+
+.logo {
+  text-align: center;
+  display: flex;
+  margin-top: 0 0 0 10px;
+
+  padding-bottom: 3rem;
+}
+
+.logo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 20%;
+}
+
+.logo span {
+  font-weight: bold;
+  color: white;
+
+  padding-left: 15px;
+  font-size: 35px;
+  text-transform: uppercase;
+}
+
+a {
+  position: relative;
+  width: 280px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #ffcf70;
+  display: table;
+  padding: 10px;
+}
+
+.dashlogo {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  top: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.nav-item {
+  position: relative;
+  top: 8px;
+  margin-left: 15px;
+}
+
+a:hover {
+  color: #33afcd;
+  transition: 0.5s;
+}
+
+.logout {
+  background-color: none;
+}
+
+/* for container */
+
+.container {
+  margin-left: 250px;
+  height: 96vh;
+  width: 85%;
+  margin-top: 30px;
+  background-color: #116d6e;
+  position: absolute;
+  top: 0;
+  overflow-x: scroll;
+}
+
+/* for submitbuttons */
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+input[type="logout"] {
+  color: #ffcf70;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/*************** for create-task********************* */
+
+.createtask-form {
+  max-width: 400px;
+  text-align: center;
+  padding: 30px;
+  margin-top: 50px;
+  margin-left: 30px;
+  text-align: left;
+  background-color: #46458c;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #f2f2f2;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+.form-group input[type="text"],
+.form-group select,
+.form-group input[type="date"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+
+  color: black;
+  font-size: 14px;
+  color: #ddd;
+}
+
+.form-group input[type="text.title"] {
+  color: black;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: black;
+  font-size: 14px;
+}
+
+.dateee {
+  display: flex;
+  justify-content: space-between;
+}
+
+.textareaa {
+  margin-bottom: 20px;
+}
+
+.textareaa label {
+  vertical-align: top;
+}
+
+.textareaa textarea {
+  width: 100%;
+  height: 120px;
+}
+
+.button-small {
+  background-color: #4e3636;
+  color: #ddd;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+}
+
+/* ********************add user********************** */
+
+.register-form {
+  max-width: 400px;
+  text-align: center;
+  padding: 30px;
+  margin-top: 50px;
+  margin-left: 30px;
+  text-align: left;
+  background-color: #46458c;
+  border-radius: 5px;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.form-input label {
+  flex: 1;
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ddd;
+}
+
+.form-input input[type="text"],
+.form-input input[type="email"],
+.form-input select,
+.form-input input[type="number"] {
+  flex: 2;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+}
+
+.errors {
+  color: red;
+  font-size: 12px;
+}
+
+/* ************************for view task **************************/
+
+.tasks {
+  position: relative;
+  width: 100%;
+  margin-top: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.t-card {
+  position: relative;
+  display: flex;
+  width: 90%;
+  background-color: #f2f2f2;
+  margin-left: 25px;
+  padding: 15px;
+  margin-top: 9px;
+  border-radius: 30px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  z-index: 2000;
+}
+
+.task-text-contents {
+  width: 84%;
+  padding-left: 10px;
+}
+
+.task-title {
+  width: 80%;
+}
+
+.task-assigned-employee {
+  display: flex;
+  width: 30%;
+}
+.task-issued-date {
+  text-align: left;
+}
+.task-priority {
+  display: none;
+}
+.low-priority {
+  background-color: #ffe4a7;
+}
+
+.medium-priority {
+  background-color: #ff90bb;
+}
+
+.high-priority {
+  background-color: #ff2171;
+}
+
+.t-card:hover {
+  transition: transform 0.5s ease;
+  transform: scale(1.01);
+  cursor: pointer;
+}
+.sort-buttons {
+  margin-left: 40px;
+  margin-top: 50px;
+}
+.text-button {
+  display: flex;
+}
+
+/* **********ACcept/Submit*********** */
+.button-container {
+  display: flex;
+  justify-content: left;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-right: 10px;
+  background-color: #0d47a1;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+  background-color: #007bff;
+}
+
+.button-container button:active {
+  background-color: #0d47a1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.task-buttons {
+  text-align: right;
+}
+.task-no {
+  color: #484b4f;
+}
+.task-description {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #555a56;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.button-small {
+  border: none;
+  color: black;
+  padding: 5px 5px;
+  text-align: right;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.button-small:hover {
+  margin-left: 0;
+  transform: translateY(2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  background-color: grey;
+}
+
+/********************** Table  ************************/
+
+.usertable {
+  max-width: 1200px;
+  margin-top: 50px;
+  margin-left: 30px;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #46458c;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #e966a0;
+  color: #333;
+  font-weight: bold;
+}
+
+.table tbody tr:hover {
+  background-color: #f2f2f2;
+}
+
+.curve th:first-child {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.curve th:last-child {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.table td button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: #46458c;
+}
+
+.table td .btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.table td .btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.table td a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ****************NOTESS*********** */
+.note-card {
+  width: 330px;
+  height: 300px;
+}
+
+.note-card {
+  margin-top: 50px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.note-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin: 60px 80px;
+}
+
+.note-name {
+  display: flex;
+  align-items: center;
+}
+
+.note-heading {
+  color: #0d47a1;
+}
+
+.note-description {
+  color: #46458c;
+}
+
+/* **********Dashboard************ */
+
+.upper-dashboard {
+  z-index: 1000;
+  border-radius: 20px;
+  background-color: blue;
+}
+
+.employee {
+  display: flex;
+}
+
+.card {
+  margin-top: 10px;
+  background: white;
+  text-align: center;
+  border-radius: 25px;
+
+  margin-bottom: 50px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.01);
+  color: grey;
+}
+
+.swiper {
+  margin-top: 50px;
+  height: 600px;
+}
+
+.swiper-slide:first-child {
+  margin-left: 0;
+}
+
+.e-text {
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5px;
+  margin-left: 8px;
+  text-transform: uppercase;
+  color: #0c82b9;
+}
+.employee {
+  margin-top: 10px;
+  display: flex;
+}
+.e-logo {
+  width: 65px;
+  height: 60px;
+  border-radius: 50%;
+  margin-left: 40px;
+  margin-top: 5px;
+  border: solid rgb(76, 100, 165);
+}
+.e-description {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px 10px 5px 5px;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: justify;
+  color: #798e94;
+}
+
+.slide-container {
+  max-width: 500px;
+  max-height: 200px;
+}
+
+/* ****************send notes****************************************** */
+.register-form {
+  max-width: 400px;
+  text-align: center;
+  padding: 30px;
+  margin-top: 50px;
+  margin-left: 30px;
+  text-align: left;
+  background-color: #46458c;
+  border-radius: 5px;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.form-input label {
+  flex: 1;
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ddd;
+}
+
+.form-input input[type="text"],
+.form-input textarea {
+  flex: 2;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+}
+
+.form-input textarea {
+  height: 120px;
+}
+
+.errors {
+  color: red;
+  font-size: 12px;
+}
+</style>

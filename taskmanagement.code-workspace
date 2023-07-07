@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../Users/chiran/Downloads/dashboard"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "taskmanagement"
+	}
+}

@@ -1,0 +1,73 @@
+1. create table task_db; 
+
+
+2 .
+CREATE TABLE users(
+id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+firstname VARCHAR(100) NOT NULL,
+lastname VARCHAR(100) NOT NULL,
+username VARCHAR(100) NOT NULL, 
+email    VARCHAR(100) NOT NULL,
+role tinyint(1) NOT NULL DEFAULT 2 COMMENT '1 = admin, 2 = staff',
+PASSWORD TEXT(100) NOT NULL,
+created_at TIMESTAMP DEFAULT CURRENT_TIME
+);
+
+
+CREATE TABLE tasks (
+  task_id INT PRIMARY KEY AUTO_INCREMENT,
+  user_id INT,
+  title VARCHAR(100) NOT NULL,
+  description TEXT,
+  due_date DATE,
+  status ENUM('pending', 'in_progress', 'completed') DEFAULT 'pending',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+ALTER TABLE tasks
+ADD task_priority INT DEFAULT 1 CHECK (task_priority IN (1, 2, 3));
+
+
+ALTER TABLE tasks
+MODIFY COLUMN due_date DATETIME;
+
+
+CREATE TABLE tasks (
+  task_id INT PRIMARY KEY AUTO_INCREMENT,
+  user_id INT,
+  title VARCHAR(100) NOT NULL,
+  description TEXT,
+  due_date DATETIME, -- Changed the data type to DATETIME
+  status ENUM('pending', 'in_progress', 'completed') DEFAULT 'pending',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+
+
+
+if(isset($_SESSION['uname'])){
+
+  
+  
+}else{
+  echo "<script> location.href='login.php'; </script>";
+
+}
+
+
+<div class="col-md-6">
+            <div class="form-group">
+              <label for="" class="control-label">Project Team Members</label>
+              <select class="form-control form-control-sm select2" multiple="multiple" name="user_ids[]">
+              	<option></option>
+              	<?php 
+              	$employees = $conn->query("SELECT *,concat(firstname,' ',lastname) as name FROM users where type = 3 order by concat(firstname,' ',lastname) asc ");
+              	while($row= $employees->fetch_assoc()):
+              	?>
+              	<option value="<?php echo $row['id'] ?>" <?php echo isset($user_ids) && in_array($row['id'],explode(',',$user_ids)) ? "selected" : '' ?>><?php echo ucwords($row['name']) ?></option>
+              	<?php endwhile; ?>
+              </select>
+            </div>
+          </div>
+          <h1>hey</h1>
