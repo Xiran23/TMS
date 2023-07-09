@@ -106,7 +106,7 @@
                 </div>
               </div>
 
-          <!-- Rest of the slide content -->
+
 
         </div>
       </div>
