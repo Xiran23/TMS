@@ -125,6 +125,7 @@ a:hover {
   align-items: center;
   margin-top: 100px;
 }
+
 /* for container */
 
 .container {
@@ -136,25 +137,6 @@ a:hover {
   position: absolute;
   top: 0;
   overflow-x: scroll;
-}
-
-/* for submitbuttons */
-
-input[type="submit"] {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-input[type="logout"] {
-  color: #ffcf70;
-}
-
-input[type="submit"]:hover {
-  background-color: #45a049;
 }
 
 /*************** for create-task********************* */
@@ -557,7 +539,7 @@ input {
   background: white;
   text-align: center;
   border-radius: 25px;
-
+  padding: 10px;
   margin-bottom: 50px;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.01);
   color: grey;
@@ -565,7 +547,7 @@ input {
 
 .swiper {
   margin-top: 50px;
-  height: 600px;
+  height: 100px;
 }
 
 .swiper-slide:first-child {
@@ -606,7 +588,27 @@ input {
 
 .slide-container {
   max-width: 500px;
-  max-height: 200px;
+  max-height: 170px;
+  padding: 10px;
+}
+
+.bottom-dash {
+  height: 440px;
+  width: 100%;
+  display: flex;
+  margin-left: 10px;
+}
+
+.dash-left {
+  width: 60%;
+  background-color: #798e94;
+  height: 440px;
+}
+
+.dash-right {
+  width: 40%;
+  background-color: #46458c;
+  height: 440px;
 }
 
 /* ****************send notes****************************************** */

@@ -35,7 +35,7 @@ swiper-container {
   z-index: 1;
   display: block;
   border-radius: 25px;
-  height: 260px;
+  height: 200px;
 }
 .swiper,
 swiper-container {

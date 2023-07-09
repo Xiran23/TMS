@@ -76,6 +76,16 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
           <?php endforeach; ?>
         </div>
       </div>
+
+      <div class="bottom-dash">
+          <div class="dash-left">
+
+          </div>
+
+          <div class="dash-right">
+
+          </div>
+      </div>
     </div>
 
     <!-- Swiper JS -->
