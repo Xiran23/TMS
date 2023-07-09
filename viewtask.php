@@ -19,6 +19,7 @@ mysqli_free_result($result);
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styledash.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="swiper avoid/swiper-bundle.min.css" />
     <link rel="stylesheet" href="responsive.css">
@@ -56,49 +57,65 @@ mysqli_free_result($result);
 
      <div class="t-card ">
 
-              <div class="task-text-contents">
+        <div class="task-left-right">
+          <div class="card-left">
 
 
             <div class="task-title">
-                <h2 class="task-no"><?php echo $task["title"]; ?></h2>
-                 <p class="task-description"><?php echo $task["description"]; ?></p>
-                 <div class="button-container">
-                <button id="acceptButton" onclick="changeButton(this)">Accept</button>
-                 </div>
-               </div>
-               <div class="task-priority">
-            <h2 class="task-no" id="priority"><?php echo $task["task_priority"]; ?></h2>
-               </div>
 
-                      </div>
-
-              <div class="task-buttons">
-              <div class="task-assigned-employee"><img src="images/icon/user-logo.png" alt="logo" width="30"> <span>
-                <?php echo $task["user_id"]; ?></span>   </div>
-              <span class="task-progress"><?php echo $task['status']; ?></span> <br>
-              <span class="task-progress"><?php echo date('Y-m-d', strtotime($task['created_at'])); ?></span> <br>
-              <span class="task-progress"><?php echo date('H:i:s', strtotime($task['created_at'])); ?></span> <br>
-
-              <span class="task-progress"><?php echo date('Y-m-d', strtotime($task['due_date'])); ?></span> <br>
-              <span class="task-progress"><?php echo date('H:i:s', strtotime($task['due_date'])); ?></span> <br>
-
-              <input type="hidden" id="startDate" value="<?php echo $task['created_at']; ?>">
-              <input type="hidden" id="endDate"value="<?php echo $task['due_date']; ?>">
-<!--
-  data _ - HTMLElement: dataset property https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset-->
-  <!-- For example, a data-abc-def attribute corresponds to dataset.abcDef -->
-              <div class="remaining-time" data-start-date="<?php echo $task['created_at']; ?>" data-end-date="<?php echo $task['due_date']; ?>"></div>
-
-
-
-
-
-
-
-              <!-- <span class="task-issued-date">//Issued date//</span> -->
-
+            <div class="task-heading">
+              <div class="heading-icon">
+              <img src="images/icon/circle-solid-24.png" width="20px"" alt="right.png">
+              </div>
+              <div class="heading-text">
+              <h2 class="task-no"><?php echo $task["title"]; ?></h2>
+              <span class="issue-date"><?php echo date('Y-m-d', strtotime($task['created_at'])); ?>,<?php echo date('H:i:s', strtotime($task['created_at'])); ?></span>
 
               </div>
+              </div>
+
+              <div>
+
+              </div>
+
+
+                <div class="task-description">
+                <p><?php echo $task["description"]; ?></p>
+                </div>
+
+
+
+
+
+                <div class="task-status">
+                <span class="task-progress"><?php echo $task['status']; ?></span>
+                </div>
+
+               </div>
+             </div>
+
+              <div class="task-right">
+              <div class="task-assigned-employee"><img src="images/icon/user-logo.png" alt="logo" width="30"> <span>
+                <?php echo $task["user_id"]; ?></span> </div>
+
+
+              <div class="task-button">
+                <button class="btn-primary">Accept task</button>
+                </div>
+
+              <div class="task-priority">
+               <h2 class="task-no" id="priority"><?php echo $task["task_priority"]; ?></h2>
+               </div>
+
+              </div>
+
+
+          </div>
+
+            <div class="bottom-card">
+               <div class="remaining-time" data-start-date="<?php echo $task['created_at']; ?>" data-end-date="<?php echo $task['due_date']; ?>"></div>
+               </div>
+
 
             </div>
 
@@ -106,6 +123,8 @@ mysqli_free_result($result);
 
 
             <?php endforeach; ?>
+
+
           </section>
 
 

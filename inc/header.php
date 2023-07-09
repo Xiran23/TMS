@@ -34,7 +34,7 @@ if(isset($_POST['logout'])){
 ?>
 <header>
     <label>USER: <?php echo  $_SESSION['username'] ?></label>
-    <!-- <label>Role: <?php echo  $_SESSION['role'] ?></label> -->
+    <label>Role: <?php echo  $_SESSION['role'] ?></label>
 
 
 </header>
@@ -68,7 +68,7 @@ if(isset($_POST['logout'])){
             <a href="createtask.php" onclick="createTask()">
               <img
                 class="dashlogo"
-                src="images/icon/update.png"
+                src="images/icon/create.png"
                 alt=""
               />
               <span class="nav-item">CREATE TASKS</span>
@@ -81,7 +81,7 @@ if(isset($_POST['logout'])){
               <img
                 class="dashlogo"
 
-                src="images/icon/update.png"
+                src="images/icon/prioritize1.png"
                 alt=""
               />
               <span class="nav-item">view TASKS</span>
@@ -93,18 +93,19 @@ if(isset($_POST['logout'])){
               <img
                 class="dashlogo"
 
-                src="images/icon/update.png"
+                src="images/icon/adduser.png"
                 alt=""
               />
               <span class="nav-item">ADD-Users</span>
             </a>
           </li>
+
           <li>
             <a href="listuser.php" onclick="">
               <img
                 class="dashlogo"
 
-                src="images/icon/update.png"
+                src="images/icon/shortlist.png"
                 alt=""
               />
               <span class="nav-item">list-Users</span>
@@ -116,7 +117,7 @@ if(isset($_POST['logout'])){
               <img
                 class="dashlogo"
 
-                src="images/icon/update.png"
+                src="images/icon/leave.png"
                 alt=""
               />
               <span class="nav-item">Notes</span>
@@ -129,29 +130,29 @@ if(isset($_POST['logout'])){
               <img
                 class="dashlogo"
 
-                src="images/icon/update.png"
+                src="images/icon/note.png"
                 alt=""
               />
               <span class="nav-item">Send Notes</span>
             </a>
           </li>
 
-           <li>
-            <a href="#">
-            <!-- <img
-                class="dashlogo"
 
-                src="images/icon/update.png"
-                alt=""
-              /> -->
-              <form method="POST">
 
-                <button type="logout" value="logout" name="logout" >Logout</button>
-              </form>
 
-            </a>
-          </li>
         </ul>
+
+<div class=" nav-item logout-div">
+
+<div><img src="images/icon/logout.png" alt="" width="40px"></div>
+<div><form method="POST">
+  <button class="nav-item logout" type="logout" value="logout" name="logout" >Logout</button>
+</form>
+</div>
+</div>
+
+
+
 
 
       </nav>

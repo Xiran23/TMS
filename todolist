@@ -1,4 +1,11 @@
-create task 
-validate user 
-list user 
-assign mulitple users 
+create task
+validate user
+list user
+assign mulitple users
+
+
+
+
+<!-- <div class="task-priority">
+               <h2 class="task-no" id="priority"><?php echo $task["task_priority"]; ?></h2>
+               </div> -->
