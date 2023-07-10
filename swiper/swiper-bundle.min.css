@@ -34,8 +34,9 @@ swiper-container {
   padding: 0;
   z-index: 1;
   display: block;
-  border-radius: 25px;
-  height: 200px;
+  /* border-radius: 25px; */
+  height: 209px;
+  background-color: grey;
 }
 .swiper,
 swiper-container {

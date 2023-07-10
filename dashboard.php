@@ -78,13 +78,20 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
       </div>
 
       <div class="bottom-dash">
-          <div class="dash-left">
+        <div class="dash-left">
+          <div class="total"></div>
+          <div class="total"></div>
+
+          <div class="total"></div>
+
+          <div class="total"></div>
+        </div>
+
+        <div class="dash-right">
+          <div class="graph">
 
           </div>
-
-          <div class="dash-right">
-
-          </div>
+        </div>
       </div>
     </div>
 

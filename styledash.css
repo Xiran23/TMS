@@ -9,6 +9,17 @@
   font-family: "Noto Sans JP", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --maincolor: #27374d;
+  --dashboard: #9db2bf;
+  --forms: #526d82;
+  --dashboard-cards: #dde6ed;
+}
+
 body {
   background: #d9d9d9;
   min-height: 100vh;
@@ -39,7 +50,7 @@ header {
 /* For navbar */
 
 nav {
-  background: #0d47a1;
+  background: var(--maincolor);
   height: 100vh;
   width: 255px;
   display: sticky;
@@ -133,7 +144,7 @@ a:hover {
   height: 96vh;
   width: 84%;
   margin-top: 30px;
-  background-color: #116d6e;
+  background-color: var(--dashboard);
   position: absolute;
   top: 0;
   overflow-x: scroll;
@@ -148,7 +159,7 @@ a:hover {
   margin-top: 50px;
   margin-left: 30px;
   text-align: left;
-  background-color: #46458c;
+  background-color: var(--forms);
   border-radius: 5px;
 }
 
@@ -211,7 +222,7 @@ input {
 }
 
 .button-small {
-  background-color: #4e3636;
+  background-color: var(--maincolor);
   color: #ddd;
   cursor: pointer;
   padding: 10px 20px;
@@ -229,7 +240,7 @@ input {
   margin-top: 50px;
   margin-left: 30px;
   text-align: left;
-  background-color: #46458c;
+  background-color: var(--forms);
   border-radius: 5px;
 }
 
@@ -426,7 +437,7 @@ input {
   margin-left: 30px;
   border-radius: 12px;
   padding: 20px;
-  background-color: #46458c;
+  background-color: var(--forms);
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -524,19 +535,13 @@ input {
 
 /* **********Dashboard************ */
 
-.upper-dashboard {
-  z-index: 1000;
-  border-radius: 20px;
-  background-color: blue;
-}
-
 .employee {
   display: flex;
 }
 
 .card {
   margin-top: 10px;
-  background: white;
+  background: var(--dashboard-cards);
   text-align: center;
   border-radius: 25px;
   padding: 10px;
@@ -546,7 +551,7 @@ input {
 }
 
 .swiper {
-  margin-top: 12px;
+  margin-top: 20px;
   height: 100px;
 }
 
@@ -593,22 +598,47 @@ input {
 }
 
 .bottom-dash {
-  height: 440px;
-  width: 100%;
+  margin-top: 20px;
+  height: 470px;
+  width: 98%;
   display: flex;
-  margin-left: 10px;
+
+  margin-left: 15px;
+  border-radius: 12px;
+  gap: 10px;
 }
 
 .dash-left {
+  border-radius: 12px;
   width: 60%;
   background-color: #798e94;
   height: 440px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 10px;
 }
 
 .dash-right {
   width: 40%;
   background-color: #46458c;
   height: 440px;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.total {
+  width: 330px;
+  height: 185px;
+  background-color: var(--dashboard-cards);
+  border-radius: 12px;
+  margin-right: 20px;
+}
+.graph {
+  width: 483px;
+  height: 415px;
+  background-color: #555a56;
 }
 
 /* ****************send notes****************************************** */
@@ -619,7 +649,7 @@ input {
   margin-top: 50px;
   margin-left: 30px;
   text-align: left;
-  background-color: #46458c;
+  background-color: var(--forms);
   border-radius: 5px;
 }
 
