@@ -52,7 +52,7 @@ if(isset($_POST['logout'])){
                     <span class="MANAGER">MANAGER</span>
                 <?php elseif ($_SESSION['role'] == 3) : ?>
                   <span class="STAFF">STAFF</span>
-                
+
               <?php endif ?>
 
             </a>
@@ -63,7 +63,7 @@ if(isset($_POST['logout'])){
           <li>
             <a href="dashboard.php">
               <img class="dashlogo" src="images/icon/dashboard.png" alt="" />
-              <span class="nav-item">DASHBOARD</span>
+              <span class="nav-item">DASHBOARD1</span>
             </a>
           </li>
           <!-- creating TASKS -->
@@ -240,8 +240,8 @@ if(isset($_POST['logout'])){
               <span class="nav-item">Notes</span>
             </a>
           </li>
-                    
-                
+
+
               <?php endif ?>
 
 
