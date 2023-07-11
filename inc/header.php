@@ -63,7 +63,7 @@ if(isset($_POST['logout'])){
           <li>
             <a href="dashboard.php">
               <img class="dashlogo" src="images/icon/dashboard.png" alt="" />
-              <span class="nav-item">DASHBOARD1</span>
+              <span class="nav-item">DASHBOARD2</span>
             </a>
           </li>
           <!-- creating TASKS -->
