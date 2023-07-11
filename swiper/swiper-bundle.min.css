@@ -24,13 +24,6 @@
   margin-left: 0;
 }
 
-:root {
-  --maincolor: #001c30;
-  --dashboard: #176b87;
-  --forms: #64ccc5;
-  --dashboard-cards: #dafffb;
-}
-
 .swiper,
 swiper-container {
   margin-left: auto;
