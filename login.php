@@ -25,11 +25,13 @@ if(!isset($_SESSION['username'])){
       if ($password == $user['password']) {
         //getting user role 
         $role = $user['role'];
+        $id  = $user['id'];
         if ($role == 1) {
           
           $_SESSION['username']=$username;
           $_SESSION['password']=$password; 
           $_SESSION['role']=$role; 
+          $_SESSION['id']=$id; 
           
           header("Location:dashboard.php");
           
@@ -37,6 +39,7 @@ if(!isset($_SESSION['username'])){
           $_SESSION['username']=$username;
           $_SESSION['password']=$password; 
           $_SESSION['role']=$role; 
+          $_SESSION['id']=$id; 
           
           header("Location:dashboard.php");
         
@@ -48,6 +51,7 @@ if(!isset($_SESSION['username'])){
           $_SESSION['username']=$username;
           $_SESSION['password']=$password; 
           $_SESSION['role']=$role; 
+          $_SESSION['id']=$id; 
           
           header("Location:dashboard.php");
         }

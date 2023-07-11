@@ -14,124 +14,144 @@ mysqli_free_result($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styledash.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="swiper avoid/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="responsive.css">
-    <script src="swiper avoid/swiper-bundle.min.js"></script>
-    <title>Dashbord</title>
-    
-  </head>
-  <body>
 
-    <?php include "inc/header.php"; ?>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styledash.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="swiper avoid/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="responsive.css">
+  <script src="swiper avoid/swiper-bundle.min.js"></script>
+  <title>Dashbord</title>
+</head>
 
-    <div class="container">
+<body>
+
+  <?php include "inc/header.php"; ?>
+
+  <div class="container">
 
     <section class="dashviewtask">
 
-    <div class="sort-buttons">
-         <button class="button-small t_high"  id="sort-high">High Priority</button>
-            <button class="button-small t_medium"  id="sort-medium">Medium Priority</button>
-           <button  class="button-small t_low"  id="sort-low">Low Priority</button>
-            <button class="button-small t_all" id="sort-all">All Tasks</button>
-   </div>
+      <div class="sort-buttons">
+        <button class="button-small" style=" background-color:#ff9999;" id="sort-high">High Priority</button>
+        <button class="button-small" style=" background-color:#ffffb3;" id="sort-medium">Medium Priority</button>
+        <button class="button-small" style=" background-color:#b3ffb3;" id="sort-low">Low Priority</button>
+        <button class="button-small" id="sort-all">All Tasks</button>
+      </div>
 
 
 
 
-   <section class="tasks">
-    <!-- ******************************** -->
-    <?php foreach ($tasks as $task): ?>
-      <?php
-      //  print_r($task);
-       ?>
+      <section class="tasks">
+        <!-- ******************************** -->
+        <?php foreach ($tasks as $task) : ?>
+
+
+
+          <?php if ($task['user_id'] == $_SESSION['id']) : ?>
+
+
+
+            <div class="t-card ">
+              <div class="task-left-right">
+                <div class="card-left">
+                  <div class="task-title">
+
+
+                    <div class="task-heading">
+                      <div class="heading-icon">
+                        <img src="images/icon/circle-solid-24.png" width="20px" alt="right.png">
+                      </div>
+                      <div class="heading-text">
+                        <h2 class="task-no"><?php echo $task["title"]; ?></h2>
+                        <span class="issue-date"><?php echo date('Y-m-d', strtotime($task['created_at'])); ?>,<?php echo date('H:i:s', strtotime($task['created_at'])); ?></span>
+
+                      </div>
+                    </div>
+
+                    <div>
+
+                    </div>
+
+
+
+
+                    <div class="task-description">
+                      <p><?php echo $task["description"]; ?></p>
+                    </div>
 
 
 
 
 
-     <div class="t-card ">
+                    <div class="task-status">
+                      <span class="task-progress"><?php echo $task['status']; ?></span>
+                    </div>
 
-        <div class="task-left-right">
-          <div class="card-left">
+                  </div>
+                </div>
+
+                <div class="task-right">
+                  <div class="task-assigned-employee"><img src="images/icon/user-logo.png" alt="logo" width="30"> <span>
+                      <?php echo $task["user_id"]; ?></span> </div>
+
+                  <?php
+                  if ($task['status'] == 'pending') {
+                    echo ' <div class="task-button">
+                  <!-- <button class="btn-primary">Accept task</button> -->
+                  <form method="post" action="modifytask.php">
+                  <input name="userid" value="' . $task["task_id"] . '">
+                  <input class="btn-primary" type="submit" value="Accept task" id="" name="accept">
+                  </form>
+                  </div>';
+                  } else if ($task['status'] == 'in_progress') {
+                    echo '  <div class="task-button">
+                  <!-- <button class="btn-primary">Accept task</button> -->
+                  <input class="btn-primary"type="submit" value="Done" id="" name="done">
+                  </div>';
+                  } else {
+                    echo "TASK COMPLETED";
+                  }
+                  ?>
+                  <!-- ************************************** -->
 
 
-            <div class="task-title">
-
-            <div class="task-heading">
-              <div class="heading-icon">
-              <img src="images/icon/circle-solid-24.png" width="20px"" alt="right.png">
-              </div>
-              <div class="heading-text">
-              <h2 class="task-no"><?php echo $task["title"]; ?></h2>
-              <span class="issue-date"><?php echo date('Y-m-d', strtotime($task['created_at'])); ?>,<?php echo date('H:i:s', strtotime($task['created_at'])); ?></span>
-
-              </div>
-              </div>
-
-              <div>
-
-              </div>
 
 
-                <div class="task-description">
-                <p><?php echo $task["description"]; ?></p>
+
+
+                  <div class="task-priority">
+                    <h2 class="task-no" id="priority"><?php echo $task["task_priority"]; ?></h2>
+                  </div>
+
                 </div>
 
 
-
-
-
-                <div class="task-status">
-                <span class="task-progress"><?php echo $task['status']; ?></span>
-                </div>
-
-               </div>
-             </div>
-
-              <div class="task-right">
-              <div class="task-assigned-employee"><img src="images/icon/user-logo.png" alt="logo" width="30"> <span>
-                <?php echo $task["user_id"]; ?></span> </div>
-
-
-              <div class="task-button">
-                <button class="btn-primary">Accept task</button>
-                </div>
-
-              <div class="task-priority">
-               <h2 class="task-no" id="priority"><?php echo $task["task_priority"]; ?></h2>
-               </div>
-
               </div>
 
-
-          </div>
-
-            <div class="bottom-card">
-               <div class="remaining-time" data-start-date="<?php echo $task['created_at']; ?>" data-end-date="<?php echo $task['due_date']; ?>"></div>
-               </div>
+              <div class="bottom-card">
+                <div class="remaining-time" data-start-date="<?php echo $task['created_at']; ?>" data-end-date="<?php echo $task['due_date']; ?>"></div>
+              </div>
 
 
             </div>
 
 
+          <?php endif ?>
+
+        <?php endforeach; ?>
 
 
-            <?php endforeach; ?>
+      </section>
 
 
-          </section>
+    </section>
 
-
-            </section>
-
-<!-- ************************************************************************************************************************************************************* -->
+    <!-- ************************************************************************************************************************************************************* -->
 
 
 
@@ -143,22 +163,22 @@ mysqli_free_result($result);
 </body>
 
 <script>
-
   var currenttime = new Date();
   console.log(currenttime);
 
-var remainingTimeELements =document.getElementsByClassName("remaining-time");
-function updateRemainingTime(){
-  var now = new Date();
-  // console.log(now);
-  for(var i = 0 ; i< remainingTimeELements.length; i++){
-    // line 86 for refernce <!-- For example, a data-abc-def attribute corresponds to dataset.abcDef -->
-    var startDate = new Date(remainingTimeELements[i].dataset.startDate);
+  var remainingTimeELements = document.getElementsByClassName("remaining-time");
 
-      var endDate = new  Date(remainingTimeELements[i].dataset.endDate);
-    var remainingTime = endDate - now;
-    console.log(remainingTime);
-    if (remainingTime > 0) {
+  function updateRemainingTime() {
+    var now = new Date();
+    // console.log(now);
+    for (var i = 0; i < remainingTimeELements.length; i++) {
+      // line 86 for refernce <!-- For example, a data-abc-def attribute corresponds to dataset.abcDef -->
+      var startDate = new Date(remainingTimeELements[i].dataset.startDate);
+
+      var endDate = new Date(remainingTimeELements[i].dataset.endDate);
+      var remainingTime = endDate - now;
+      console.log(remainingTime);
+      if (remainingTime > 0) {
         var days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
         var hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
@@ -176,28 +196,28 @@ function updateRemainingTime(){
 
 
 
-var taskBlocks = document.getElementsByClassName('t-card');
-for (var i = 0; i < taskBlocks.length; i++) {
-  var taskBlock = taskBlocks[i];
-  // var priority = taskBlock.getElementById('priority').textContent;
-  var priority = taskBlock.querySelector('#priority').textContent;
+  var taskBlocks = document.getElementsByClassName('t-card');
+  for (var i = 0; i < taskBlocks.length; i++) {
+    var taskBlock = taskBlocks[i];
+    // var priority = taskBlock.getElementById('priority').textContent;
+    var priority = taskBlock.querySelector('#priority').textContent;
 
-  switch (priority) {
-    case '1':
-      taskBlock.classList.add('low-priority');
-      break;
-    case '2':
-      taskBlock.classList.add('medium-priority');
-      break;
-    case '3':
-      taskBlock.classList.add('high-priority');
-      break;
-    default:
-      break;
+    switch (priority) {
+      case '1':
+        taskBlock.classList.add('low-priority');
+        break;
+      case '2':
+        taskBlock.classList.add('medium-priority');
+        break;
+      case '3':
+        taskBlock.classList.add('high-priority');
+        break;
+      default:
+        break;
+    }
   }
-}
 
-// taskBlocks.classList.add('task-blockrt');
+  // taskBlocks.classList.add('task-blockrt');
 
 
 
@@ -257,33 +277,27 @@ for (var i = 0; i < taskBlocks.length; i++) {
   //   });
   // });
 
-  function changeButton(button) {
-  button.innerHTML = "Submit";
-  button.onclick = function() {
-    submitForm();
-    admindashboard();
-  };
-}
+  //   function changeButton(button) {
+  //   button.innerHTML = "Submit";
+  //   button.onclick = function() {
+  //     submitForm();
+  //     admindashboard();
+  //   };
+  // }
 
-function submitForm() {
-  alert("Form submitted!");
-  //submit ko kaam haru garneh
-}
+  // function submitForm() {
+  //   alert("Form submitted!");
+  //   //submit ko kaam haru garneh
+  // }
 
-function AdminDashboard() {
-  // task accept admin dashboard maaa dekhauneh
-}
-
-
-
-
-
-
+  // function AdminDashboard() {
+  //   // task accept admin dashboard maaa dekhauneh
+  // }
 </script>
 
 <!-- Swiper JS -->
 
- <!-- <script src="swiper/swiper-bundle.min.js"></script> -->
+<!-- <script src="swiper/swiper-bundle.min.js"></script> -->
 <!-- <script src="js/jquery-3.7.0.min.js"></script>
 <script src="js/index.js"></script>
 <script src="ajax/ajax.js"></script> -->
