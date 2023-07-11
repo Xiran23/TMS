@@ -6,11 +6,16 @@ $resultTasks = mysqli_query($conn, $queryTasks);
 $rowTasks = mysqli_fetch_assoc($resultTasks);
 $totalTasks = $rowTasks['totalTasks'];
 
-// Get the total number of staffs
-$queryStaffs = "SELECT COUNT(*) AS totalStaffs FROM users WHERE role = 3"; // Assuming 'role' column represents staffs
+$queryStaffs = "SELECT COUNT(*) AS totalStaffs FROM users WHERE role = 3";
 $resultStaffs = mysqli_query($conn, $queryStaffs);
 $rowStaffs = mysqli_fetch_assoc($resultStaffs);
 $totalStaffs = $rowStaffs['totalStaffs'];
+
+$queryNotices = "SELECT COUNT(*) AS totalNotices FROM notices";
+$resultNotices = mysqli_query($conn, $queryNotices);
+$rowNotices = mysqli_fetch_assoc($resultNotices);
+$totalNotices = $rowNotices['totalNotices'];
+
 
 $query = "SELECT * FROM users";
 
@@ -141,7 +146,7 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 </div>
 
                 <div class="total-tasks">
-                  <h1>10</h1>
+                  <h1><?php echo $totalNotices; ?></h1>
                 </div>
               </div>
             </div>

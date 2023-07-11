@@ -49,6 +49,18 @@ ADD COLUMN profilepic VARCHAR(255),
 ADD COLUMN description TEXT;                           //table alter for profilepicture and description
 
 
+CREATE TABLE notices (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255),
+    description TEXT
+);
+
+
+ALTER TABLE notices
+ADD COLUMN username VARCHAR(255) NOT NULL AFTER id;
+
+
+
 
 
 if(isset($_SESSION['uname'])){
