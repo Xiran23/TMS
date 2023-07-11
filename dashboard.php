@@ -1,6 +1,17 @@
 <?php
 include('config/db.php');
 
+$queryTasks = "SELECT COUNT(*) AS totalTasks FROM tasks";
+$resultTasks = mysqli_query($conn, $queryTasks);
+$rowTasks = mysqli_fetch_assoc($resultTasks);
+$totalTasks = $rowTasks['totalTasks'];
+
+// Get the total number of staffs
+$queryStaffs = "SELECT COUNT(*) AS totalStaffs FROM users WHERE role = 3"; // Assuming 'role' column represents staffs
+$resultStaffs = mysqli_query($conn, $queryStaffs);
+$rowStaffs = mysqli_fetch_assoc($resultStaffs);
+$totalStaffs = $rowStaffs['totalStaffs'];
+
 $query = "SELECT * FROM users";
 
 $result = mysqli_query($conn, $query);
@@ -8,6 +19,7 @@ $result = mysqli_query($conn, $query);
 $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -93,7 +105,7 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 </div>
 
                 <div class="total-tasks">
-                  <h1>10</h1>
+                  <h1><?php echo $totalTasks; ?></h1>
                 </div>
               </div>
             </div>
@@ -107,11 +119,11 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
               </div>
               <div class="task-bottom">
                 <div class="total-title">
-                  <h5>Total Tasks</h5>
+                  <h5>Total Staffs</h5>
                 </div>
 
                 <div class="total-tasks">
-                  <h1>10</h1>
+                  <h1><?php echo $totalStaffs; ?></h1>
                 </div>
               </div>
             </div>
@@ -125,7 +137,7 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
               </div>
               <div class="task-bottom">
                 <div class="total-title">
-                  <h5>Total Tasks</h5>
+                  <h5>Total Notice</h5>
                 </div>
 
                 <div class="total-tasks">
@@ -168,7 +180,7 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
             <script>
               const xValues = ["staff", "employee"];
-              const yValues = [70, 30];
+              const yValues = [<?php echo $totalTasks; ?>, <?php echo $totalStaffs; ?>];
               const barColors = ["#b91d47", "#00aba9"];
 
               new Chart("myChart", {

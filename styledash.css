@@ -129,7 +129,7 @@ a:hover {
 }
 
 .logout {
-  background-color: #0d47a1;
+  background-color: var(--maincolor);
   color: #ffcf70;
   margin-bottom: 22px;
 }
@@ -668,6 +668,9 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.total-title {
+  font-size: 30px;
 }
 
 .graph {
