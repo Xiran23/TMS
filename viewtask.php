@@ -25,6 +25,7 @@ mysqli_free_result($result);
     <link rel="stylesheet" href="responsive.css">
     <script src="swiper avoid/swiper-bundle.min.js"></script>
     <title>Dashbord</title>
+    
   </head>
   <body>
 
@@ -35,10 +36,10 @@ mysqli_free_result($result);
     <section class="dashviewtask">
 
     <div class="sort-buttons">
-         <button class="button-small"  style=" background-color:#ff9999;" id="sort-high">High Priority</button>
-            <button class="button-small" style=" background-color:#ffffb3;" id="sort-medium">Medium Priority</button>
-           <button  class="button-small" style=" background-color:#b3ffb3;" id="sort-low">Low Priority</button>
-            <button class="button-small" id="sort-all">All Tasks</button>
+         <button class="button-small t_high"  id="sort-high">High Priority</button>
+            <button class="button-small t_medium"  id="sort-medium">Medium Priority</button>
+           <button  class="button-small t_low"  id="sort-low">Low Priority</button>
+            <button class="button-small t_all" id="sort-all">All Tasks</button>
    </div>
 
 

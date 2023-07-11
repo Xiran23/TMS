@@ -24,6 +24,13 @@
   margin-left: 0;
 }
 
+:root {
+  --maincolor: #001c30;
+  --dashboard: #176b87;
+  --forms: #64ccc5;
+  --dashboard-cards: #dafffb;
+}
+
 .swiper,
 swiper-container {
   margin-left: auto;
@@ -36,7 +43,7 @@ swiper-container {
   display: block;
   /* border-radius: 25px; */
   height: 209px;
-  background-color: grey;
+  background-color: var(--forms);
 }
 .swiper,
 swiper-container {

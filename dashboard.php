@@ -12,6 +12,8 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -79,17 +81,115 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
       <div class="bottom-dash">
         <div class="dash-left">
-          <div class="total"></div>
-          <div class="total"></div>
+          <div class="total">
 
-          <div class="total"></div>
+          <div class="total-card">
+              <div class="total-logo">
+                <img src="images/icon/shortlist.png" width="90px" alt="" />
+              </div>
+              <div class="task-bottom">
+                <div class="total-title">
+                  <h5>Total Tasks</h5>
+                </div>
 
-          <div class="total"></div>
+                <div class="total-tasks">
+                  <h1>10</h1>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="total">
+            <div class="total-card">
+              <div class="total-logo">
+                <img src="images/icon/shortlist.png" width="90px" alt="" />
+              </div>
+              <div class="task-bottom">
+                <div class="total-title">
+                  <h5>Total Tasks</h5>
+                </div>
+
+                <div class="total-tasks">
+                  <h1>10</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="total">
+
+          <div class="total-card">
+              <div class="total-logo">
+                <img src="images/icon/shortlist.png" width="90px" alt="" />
+              </div>
+              <div class="task-bottom">
+                <div class="total-title">
+                  <h5>Total Tasks</h5>
+                </div>
+
+                <div class="total-tasks">
+                  <h1>10</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="total">
+
+          <div class="total-card">
+              <div class="total-logo">
+                <img src="images/icon/shortlist.png" width="90px" alt="" />
+              </div>
+              <div class="task-bottom">
+                <div class="total-title">
+                  <h5>Total Tasks</h5>
+                </div>
+
+                <div class="total-tasks">
+                  <h1>10</h1>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="dash-right">
           <div class="graph">
+            <div>
+              <canvas id="myChart" style="width: 500px; height: 370px"></canvas>
+            </div>
 
+            <div>
+              <h3 style="text-align: center; margin-top: 20px">
+                Number of employee and task
+              </h3>
+            </div>
+
+            <script>
+              const xValues = ["staff", "employee"];
+              const yValues = [70, 30];
+              const barColors = ["#b91d47", "#00aba9"];
+
+              new Chart("myChart", {
+                type: "pie",
+                data: {
+                  labels: xValues,
+                  datasets: [
+                    {
+                      backgroundColor: barColors,
+                      data: yValues,
+                    },
+                  ],
+                },
+                options: {
+                  legend: {
+                    position: "top",
+                    align: "end",
+                  },
+                },
+              });
+            </script>
           </div>
         </div>
       </div>

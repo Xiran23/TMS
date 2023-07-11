@@ -14,10 +14,16 @@ html {
 }
 
 :root {
-  --maincolor: #27374d;
-  --dashboard: #9db2bf;
-  --forms: #526d82;
-  --dashboard-cards: #dde6ed;
+  --maincolor: #001c30;
+  --dashboard: #176b87;
+  --forms: #64ccc5;
+  --dashboard-cards: #dafffb;
+  --priority_high: #eb455f;
+  --priority_medium: #ea906c;
+  --priority_low: #fae392;
+  --priority_all: yellow;
+  --task_description: #862b0d;
+  --table_header: #b5c99a;
 }
 
 body {
@@ -142,7 +148,7 @@ a:hover {
 .container {
   margin-left: 250px;
   height: 96vh;
-  width: 84%;
+  width: 85%;
   margin-top: 30px;
   background-color: var(--dashboard);
   position: absolute;
@@ -221,8 +227,20 @@ input {
   height: 120px;
 }
 
+.t_high {
+  background-color: var(--priority_high);
+}
+.t_medium {
+  background-color: var(--priority_medium);
+}
+.t_low {
+  background-color: var(--priority_low);
+}
+.t_all {
+  background-color: var(--priority_all);
+}
+
 .button-small {
-  background-color: var(--maincolor);
   color: #ddd;
   cursor: pointer;
   padding: 10px 20px;
@@ -324,6 +342,7 @@ input {
   margin-left: 5px;
   display: flex;
   flex-direction: column;
+  color: black;
 }
 
 .task-assigned-employee {
@@ -335,19 +354,19 @@ input {
 }
 
 .low-priority {
-  background-color: #ffe4a7;
+  background-color: var(--priority_low);
 }
 
 .medium-priority {
-  background-color: #ff90bb;
+  background-color: var(--priority_medium);
 }
 
 .high-priority {
-  background-color: #ff2171;
+  background-color: var(--priority_high);
 }
 
 .task-status {
-  background-color: skyblue;
+  background-color: #333;
   width: max-content;
   color: azure;
   padding: 7px;
@@ -369,13 +388,13 @@ input {
 
 .task-no {
   font-size: 40px;
-  color: #484b4f;
+  color: #331d2c;
 }
 
 .issue-date {
   top: 0;
   font-size: 12px;
-  color: grey;
+  color: #4d455d;
 }
 .task-priority {
   display: none;
@@ -398,7 +417,7 @@ input {
   padding: 5px;
   margin-left: 17px;
   font-size: 25px;
-  color: #555a56;
+  color: var(--task_description);
 }
 
 .button-group {
@@ -456,7 +475,7 @@ input {
 }
 
 .table th {
-  background-color: #e966a0;
+  background-color: var(--table_header);
   color: #333;
   font-weight: bold;
 }
@@ -567,7 +586,7 @@ input {
   margin-top: 5px;
   margin-left: 8px;
   text-transform: uppercase;
-  color: #0c82b9;
+  color: var(--maincolor);
 }
 .employee {
   margin-top: 10px;
@@ -595,6 +614,7 @@ input {
   max-width: 500px;
   max-height: 170px;
   padding: 10px;
+  /* background-color: var(--cards); */
 }
 
 .bottom-dash {
@@ -611,7 +631,7 @@ input {
 .dash-left {
   border-radius: 12px;
   width: 60%;
-  background-color: #798e94;
+  background-color: var(--forms);
   height: 440px;
   padding: 20px;
   display: flex;
@@ -622,7 +642,7 @@ input {
 
 .dash-right {
   width: 40%;
-  background-color: #46458c;
+  background-color: var(--forms);
   height: 440px;
   padding: 12px;
   border-radius: 12px;
@@ -635,10 +655,25 @@ input {
   border-radius: 12px;
   margin-right: 20px;
 }
+
+.total-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.task-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .graph {
   width: 483px;
   height: 415px;
-  background-color: #555a56;
+  background-color: var(--forms);
 }
 
 /* ****************send notes****************************************** */
