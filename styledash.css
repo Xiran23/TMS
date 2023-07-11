@@ -14,10 +14,14 @@ html {
 }
 
 :root {
-  --maincolor: #001c30;
-  --dashboard: #176b87;
-  --forms: #64ccc5;
-  --dashboard-cards: #dafffb;
+  --navbar: #e23e57;
+  --dashboard: #88304e;
+  --forms: #522546;
+  --dashboard-cards: #311d3f;
+  --note-card: #ff9292;
+  --inputcolor: #ffb4b4;
+  --anchortag: #fff; /*ffcf70 */
+
   --priority_high: #eb455f;
   --priority_medium: #ea906c;
   --priority_low: #fae392;
@@ -31,15 +35,8 @@ body {
   min-height: 100vh;
 }
 
-/* .fixx {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-} */
-
-/* for header */
 header {
-  background: #00122e;
+  background-color: var(--navbar);
   position: absolute;
   top: 0;
   left: 250px;
@@ -56,14 +53,13 @@ header {
 /* For navbar */
 
 nav {
-  background: var(--maincolor);
+  background-color: var(--navbar);
   height: 102vh;
   width: 270px;
   display: sticky;
   left: 0;
   top: 0;
   padding: 20px;
-
   overflow: hidden;
 }
 
@@ -104,7 +100,7 @@ a {
   width: 280px;
   font-weight: bold;
   font-size: 16px;
-  color: #ffcf70;
+  color: var(--anchortag);
   display: table;
   padding: 10px;
 }
@@ -130,9 +126,12 @@ a:hover {
 }
 
 .logout {
-  background-color: var(--maincolor);
   color: #ffcf70;
   margin-bottom: 22px;
+}
+
+.logt form {
+  background-color: var(--navbar);
 }
 
 .logout-div {
@@ -168,10 +167,12 @@ a:hover {
   align-items: center;
 }
 
-form {
+.create_form form {
   padding: 30px;
   max-width: 90%;
   width: 800px;
+  background-color: var(--forms);
+  border-radius: 12px;
 }
 
 .input-group {
@@ -187,11 +188,13 @@ textarea {
   border: 1px solid #fff;
   color: #001c30;
   font-size: 15px;
+  background-color: var(--inputcolor);
   border-radius: 12px;
 }
 
 .create_form textarea {
   height: 200px;
+  background-color: var(--inputcolor);
 }
 .create_form label {
   height: 100%;
@@ -204,10 +207,11 @@ textarea {
   width: 100%;
   padding: 10px;
   font-size: 15px;
+  background-color: var(--inputcolor);
 }
 #myInputField {
   width: 40px;
-  background-color: grey;
+  background-color: var(--inputcolor);
 }
 
 .create_employe {
@@ -216,45 +220,7 @@ textarea {
   align-items: center;
 }
 
-/* .form-group {
-  margin-bottom: 20px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #f2f2f2;
-} */
-/*
-input {
-  margin-bottom: 10px;
-} */
-
-/* .form-group input[type="text"],
-.form-group select,
-.form-group input[type="date"],
-.form-group textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-
-  color: black;
-  font-size: 14px;
-  color: #ddd;
-} */
-/*
-.form-group input[type="text.title"] {
-  color: black;
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  color: black;
-  font-size: 14px;
-} */
+/* ****************8 */
 
 .textareaa {
   margin-bottom: 20px;
@@ -568,7 +534,7 @@ input {
 
 .note-card {
   margin-top: 10px;
-  background-color: white;
+  background-color: var(--note-card);
   border-radius: 12px;
   padding: 15px;
 }
@@ -630,7 +596,7 @@ input {
   margin-top: 5px;
   margin-left: 8px;
   text-transform: uppercase;
-  color: var(--maincolor);
+  color: var(--navbar);
 }
 .employee {
   margin-top: 10px;

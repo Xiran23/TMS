@@ -145,7 +145,8 @@ if(isset($_POST['logout'])){
 <div class=" nav-item logout-div">
 
 <div><img src="images/icon/logout.png" alt="" width="40px"></div>
-<div><form method="POST">
+<div class="logt">
+  <form method="POST"">
   <button class="nav-item logout" type="logout" value="logout" name="logout" >Logout</button>
 </form>
 </div>
