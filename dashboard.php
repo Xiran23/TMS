@@ -174,7 +174,7 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
             <div>
               <h3 style="text-align: center; margin-top: 20px">
-                Number of employee and task
+                Balance of staff and tasks
               </h3>
             </div>
 
