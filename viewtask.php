@@ -104,7 +104,7 @@ mysqli_free_result($result);
                     echo ' <div class="task-button">
                   <!-- <button class="btn-primary">Accept task</button> -->
                   <form method="post" action="modifytask.php">
-                  <input name="userid" value="' . $task["task_id"] . '">
+                  <input name="userid" type="hidden" value="' . $task["task_id"] . '">
                   <input class="btn-primary" type="submit" value="Accept task" id="" name="accept">
                   </form>
                   </div>';

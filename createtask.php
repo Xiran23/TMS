@@ -49,7 +49,7 @@
               $employees = $conn->query("SELECT *FROM users");
               while ($employee = $employees->fetch_assoc()) {
 
-                $firstname = $employee['firstname'];
+                $firstname = $employee['username'];
                 $id = $employee['id'];
 
                 echo "<option value='$id'>$firstname </option>";
