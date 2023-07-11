@@ -9,7 +9,7 @@ if(isset($_GET['deleteid'])){
     $result = mysqli_query($conn,$sql);
 
     if($result){
-        header('location:list_user.php');
+        header('location:listuser.php');
     } else {
         die(mysqli_error($conn));
     }
