@@ -30,14 +30,19 @@ if (isset($_POST['logout'])) {
 }
 
 ?>
-<header>
-  <label style="color:black;">USER: <?php echo  $_SESSION['username'] ?></label>
-  <div class="hide">
-    <label>Role: <?php echo  $_SESSION['role'] ?></label>
-    <label style="color: brown;">userid: <?php echo  $_SESSION['id'] ?></label>
+<header class="flex">
+  <div class="labell">
+    <label style="color:black;">USER: <?php echo  $_SESSION['username'] ?></label>
+  </div>
+  <div class="logout">
+    <div><img src="images/icon/logout.png" width="30px" style="margin-top: 10px;" alt=""></div>
+    <form method="POST">
+      <button class="nav-item logout" type="logout" value="logout" name="logout">Logout</button>
+    </form>
   </div>
 
 </header>
+
 
 <nav>
   <ul>
@@ -177,6 +182,10 @@ if (isset($_POST['logout'])) {
         </a>
       </li>
 
+      <div class="hide">
+        <label>Role: <?php echo  $_SESSION['role'] ?></label>
+        <label style="color: brown;">userid: <?php echo  $_SESSION['id'] ?></label>
+      </div>
 
     <?php endif ?>
 
@@ -184,15 +193,7 @@ if (isset($_POST['logout'])) {
 
   </ul>
 
-  <div class=" nav-item logout-div">
 
-    <div><img src="images/icon/logout.png" alt="" width="40px"></div>
-    <div class="logt">
-      <form method="POST">
-        <button class="nav-item logout" type="logout" value="logout" name="logout">Logout</button>
-      </form>
-    </div>
-  </div>
 
 
 
