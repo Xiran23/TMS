@@ -100,23 +100,44 @@ mysqli_free_result($result);
                       <?php echo $task["user_id"]; ?></span> </div>
 
                   <?php
-                  if ($task['status'] == 'pending') {
-                    echo ' <div class="task-button">
-                  <!-- <button class="btn-primary">Accept task</button> -->
-                  <form method="post" action="modifytask.php">
-                  <input name="userid" type="hidden" value="' . $task["task_id"] . '">
-                  <input class="btn-primary" type="submit" value="Accept task" id="" name="accept">
-                  </form>
-                  </div>';
-                  } else if ($task['status'] == 'in_progress') {
-                    echo '  <div class="task-button">
-                  <!-- <button class="btn-primary">Accept task</button> -->
-                  <input class="btn-primary"type="submit" value="Done" id="" name="done">
-                  </div>';
-                  } else {
-                    echo "TASK COMPLETED";
-                  }
+                  // if ($task['status'] == 'pending') {
+                  //   echo ' <div class="task-button">
+                  // <!-- <button class="btn-primary">Accept task</button> -->
+                  // <form method="post" action="modifytask.php">
+                  // <input name="userid" type="hidden" value="' . $task["task_id"] . '">
+                  // <input class="btn-primary" type="submit" value="Accept task" id="" name="accept">
+                  // </form>
+                  // </div>';
+                  // } else if ($task['status'] == 'in_progress') {
+                  //   echo '  <div class="task-button">
+                  // <!-- <button class="btn-primary">Accept task</button> -->
+                  // <input class="btn-primary"type="submit" value="Done" id="" name="done">
+                  // </div>';
+                  // } else {
+                  //   echo "TASK COMPLETED";
+                  // }
                   ?>
+
+                  <?php if ($task['status'] == 'pending') : ?>
+                    <div class="task-button">
+                      <!-- <button class="btn-primary">Accept task</button> -->
+                      <form method="post" action="modifytask.php">
+                        <input name="userid" type="hidden" value="<?= $task["task_id"] ?>">
+                        <input class="btn-primary" type="submit" value="Accept task" id="" name="accept">
+                      </form>
+                    </div>
+                  <?php elseif ($task['status'] == 'in_progress') : ?>
+                    <div class="task-button">
+                      <!-- <button class="btn-primary">Accept task</button> -->
+                      <form method="post" action="modifytask.php">
+                      <input name="userid" type="hidden" value="<?= $task["task_id"] ?>">
+                      <input class="btn-primary" type="submit" value="Done" id="" name="done">
+                      </form>
+                    </div>
+                  <?php else : ?>
+                    TASK COMPLETED
+                  <?php endif; ?>
+
                   <!-- ************************************** -->
 
 
@@ -132,10 +153,18 @@ mysqli_free_result($result);
 
 
               </div>
-
+<?php if($task['status']=='in_progress' || $task['status']=='pending'): ?>
               <div class="bottom-card">
                 <div class="remaining-time" data-start-date="<?php echo $task['created_at']; ?>" data-end-date="<?php echo $task['due_date']; ?>"></div>
               </div>
+
+              <?php else :?>
+                <div class="bottom-card">
+
+                  TASK COMPLETED
+                </div>
+
+                <?php endif; ?>
 
 
             </div>

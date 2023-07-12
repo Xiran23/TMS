@@ -163,7 +163,7 @@ if(isset($_POST['logout'])){
 
            <!-- view TASKS -->
            <li>
-            <a href="viewtask.php" >
+            <a href="viewtaskadmin.php" >
               <img
                 class="dashlogo"
 
@@ -252,7 +252,7 @@ if(isset($_POST['logout'])){
 
 <div><img src="images/icon/logout.png" alt="" width="40px"></div>
 <div class="logt">
-  <form method="POST"">
+  <form method="POST">
   <button class="nav-item logout" type="logout" value="logout" name="logout" >Logout</button>
 </form>
 </div>

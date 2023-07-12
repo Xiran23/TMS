@@ -6,8 +6,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="styledash.css">
-<link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="styledash.css">
+  <link rel="stylesheet" href="responsive.css">
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="swiper/swiper-bundle.min.css" />
 
@@ -24,23 +24,23 @@
   <div class="container">
 
 
-      <div class="create_form">
+    <div class="create_form">
 
 
 
-        <form class="create_task" method="POST" name="myForm" onsubmit="return validateForm()">
+      <form class="create_task" method="POST" name="myForm" onsubmit="return validateForm()">
 
 
 
 
 
-          <div class="input-group">
-            <label  for="tname">Title:</label>
-            <input  type="text.title" name="tname" type="text">
-          </div>
+        <div class="input-group">
+          <label for="tname">Title:</label>
+          <input type="text.title" name="tname" type="text">
+        </div>
 
 
-<div class="create_employe">
+        <div class="create_employe">
           <div class="input-group">
             <label for="emp">Employee:</label>
             <select name="emp" placeholder="please neter the title" onchange="populateInputField()" id="emp"> //multiple is removed
@@ -55,26 +55,26 @@
                 echo "<option value='$id'>$firstname </option>";
               }
               ?>
-              </select>
-              </div>
+            </select>
+          </div>
 
           <div class="id">
 
             <label for="emp">Employee_ID:</label>
             <input name="empid" type="text" id="myInputField" readonly>
 
-           </div>
-           </div>
+          </div>
+        </div>
 
-<div class="create_employe">
+        <div class="create_employe">
 
-         <div class="input-group">
-          <div>
-            <label for="">submission_date:</label>
-            <input type="datetime-local" name="subdate" >
+          <div class="input-group">
+            <div>
+              <label for="">submission_date:</label>
+              <input type="datetime-local" name="subdate">
 
             </div>
-         </div>
+          </div>
 
           <div class="input-group">
 
@@ -86,21 +86,21 @@
             </select>
 
           </div>
-          </div>
+        </div>
 
-          <div class="input-group">
+        <div class="input-group">
           <label for="">description:</label>
           <textarea name="tdesc" placeholder="Enter task description..."></textarea>
-          </div>
+        </div>
 
 
 
 
-          <input class="button-small" style="background-color: grey;" type="submit" value="submit" name="submit" id="submit">
+        <input class="button-small" style="background-color: grey;" type="submit" value="submit" name="submit" id="submit">
 
 
-        </form>
-      </div>
+      </form>
+    </div>
 
 
   </div>
@@ -136,7 +136,7 @@
       return false;
     }
 
-    if (empID == "") {
+    if (empID == "") {  
       alert("Employee ID must be filled out");
       return false;
     }
@@ -151,7 +151,6 @@
       return false;
     }
   }
-
 </script>
 
 

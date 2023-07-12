@@ -99,24 +99,26 @@ mysqli_free_result($result);
                   <div class="task-assigned-employee"><img src="images/icon/user-logo.png" alt="logo" width="30"> <span>
                       <?php echo $task["user_id"]; ?></span> </div>
 
-                  <?php
-                  if ($task['status'] == 'pending') {
-                    echo ' <div class="task-button">
-                  <!-- <button class="btn-primary">Accept task</button> -->
-                  <form method="post" action="modifytask.php">
-                  <input name="userid" value="' . $task["task_id"] . '">
-                  <input class="btn-primary" type="submit" value="Accept task" id="" name="accept">
-                  </form>
-                  </div>';
-                  } else if ($task['status'] == 'in_progress') {
-                    echo '  <div class="task-button">
-                  <!-- <button class="btn-primary">Accept task</button> -->
-                  <input class="btn-primary"type="submit" value="Done" id="" name="done">
-                  </div>';
-                  } else {
-                    echo "TASK COMPLETED";
-                  }
-                  ?>
+                      
+              
+                    <div class="task-button">
+                      <!-- <button class="btn-primary">Accept task</button> -->
+                      <form method="post" action="updateanddelete.php">
+                        <input name="userid" type="hidden" value="<?= $task["task_id"] ?>">
+                        <input class="btn-primary" type="submit" value="Edit" id="" name="edit">
+                      </form>
+                    </div> 
+                  
+                    <div class="task-button">
+                      <!-- <button class="btn-primary">Accept task</button> -->
+                      <form method="post" action="updateanddelete.php">
+                      <input name="userid" type="hidden" value="<?= $task["task_id"] ?>">
+                      <input class="btn-primary" type="submit" value="Delete" id="" name="delete">
+                      </form>
+                    </div>
+              
+
+            
                   <!-- ************************************** -->
 
 
@@ -132,10 +134,18 @@ mysqli_free_result($result);
 
 
               </div>
-
+              <?php if($task['status']=='inprogress' && $task['status']=='pending'): ?>
               <div class="bottom-card">
                 <div class="remaining-time" data-start-date="<?php echo $task['created_at']; ?>" data-end-date="<?php echo $task['due_date']; ?>"></div>
               </div>
+
+              <?php else :?>
+                <div class="bottom-card">
+
+                  TASK COMPLETED
+                </div>
+
+                <?php endif; ?>
 
 
             </div>
