@@ -49,7 +49,7 @@ if(isset($_POST['logout'])){
                 if ($_SESSION['role'] == 1): ?>
                   <span class="ADMIN">ADMIN</span>
                 <?php elseif ($_SESSION['role'] == 2):?>
-                    <span class="MANAGER">MANAGER</span>
+                    <span class="MANAGER" style="font-size: 26px;">MANAGER</span>
                 <?php elseif ($_SESSION['role'] == 3) : ?>
                   <span class="STAFF">STAFF</span>
 
@@ -108,7 +108,7 @@ if(isset($_POST['logout'])){
               <img
                 class="dashlogo"
 
-                src="images/icon/shortlist.png"
+       src="images/icon/shortlist.png"
                 alt=""
               />
               <span class="nav-item">list-Users</span>
