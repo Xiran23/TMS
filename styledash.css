@@ -198,7 +198,6 @@ textarea {
 
 .create_form textarea {
   height: 200px;
-  background-color: var(--inputcolor);
 }
 .create_form label {
   height: 100%;
@@ -207,11 +206,14 @@ textarea {
   cursor: text;
 }
 .create_form select {
-  border-radius: 12px;
   width: 100%;
   padding: 10px;
+  outline: 0;
+  border: 1px solid #fff;
+  color: #001c30;
   font-size: 15px;
   background-color: var(--inputcolor);
+  border-radius: 12px;
 }
 #myInputField {
   width: 40px;
@@ -224,89 +226,58 @@ textarea {
   align-items: center;
 }
 
-/* ****************8 */
-
-.textareaa {
-  margin-bottom: 20px;
-}
-
-.textareaa label {
-  vertical-align: top;
-}
-
-.textareaa textarea {
-  width: 100%;
-  height: 120px;
-}
-
-.t_high {
-  background-color: var(--priority_high);
-}
-.t_medium {
-  background-color: var(--priority_medium);
-}
-.t_low {
-  background-color: var(--priority_low);
-}
-.t_all {
-  background-color: var(--priority_all);
-}
-
-.button-small {
-  color: #ddd;
-  cursor: pointer;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 4px;
-}
-
 /* ********************add user********************** */
 
-.register-form {
-  max-width: 400px;
-  text-align: center;
-  padding: 30px;
-  margin-top: 50px;
-  margin-left: 30px;
-  text-align: left;
-  background-color: var(--forms);
-  border-radius: 5px;
-}
-
-.form-input {
+.adduser-form {
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 12px;
 }
 
-.form-input label {
-  flex: 1;
-  margin-right: 10px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #ddd;
+.inputflex {
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
-.form-input input[type="text"],
-.form-input input[type="email"],
-.form-input select,
-.form-input input[type="number"] {
-  flex: 2;
+.adduser-form input,
+textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 14px;
-  color: #333;
+  outline: 0;
+  border: 1px solid #fff;
+  color: #001c30;
+  font-size: 15px;
+  background-color: var(--inputcolor);
+  border-radius: 12px;
 }
 
-.errors {
-  color: red;
-  font-size: 12px;
+#profile-pic {
+  width: 50%;
 }
 
+.adduser-form select {
+  width: 100%;
+  padding: 10px;
+  outline: 0;
+  border: 1px solid #fff;
+  color: #001c30;
+  font-size: 15px;
+  background-color: var(--inputcolor);
+  border-radius: 12px;
+}
+
+.adduser-form textarea {
+  height: 200px;
+}
+.adduser-form label {
+  height: 100%;
+  font-size: 19px;
+  padding: 10px;
+  cursor: text;
+}
 /* ************************for view task **************************/
 
 .tasks {
@@ -377,6 +348,27 @@ textarea {
   background-color: var(--priority_high);
 }
 
+.t_high {
+  background-color: var(--priority_high);
+}
+.t_medium {
+  background-color: var(--priority_medium);
+}
+.t_low {
+  background-color: var(--priority_low);
+}
+.t_all {
+  background-color: var(--priority_all);
+}
+
+.button-small {
+  color: #ddd;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+}
 .task-status {
   background-color: #333;
   width: max-content;
