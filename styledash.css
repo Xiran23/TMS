@@ -14,12 +14,12 @@ html {
 }
 
 :root {
-  --navbar: #e23e57;
-  --dashboard: #88304e;
-  --forms: #522546;
-  --dashboard-cards: #311d3f;
+  --navbar: #48466d;
+  --dashboard: #3d84a8;
+  --forms: #46cdcf;
+  --dashboard-cards: #abedd8;
   --note-card: #ff9292;
-  --inputcolor: #ffb4b4;
+  --inputcolor: var(--dashboard);
   --anchortag: #fff; /*ffcf70 */
 
   --priority_high: #eb455f;
@@ -28,6 +28,7 @@ html {
   --priority_all: yellow;
   --task_description: #862b0d;
   --table_header: #b5c99a;
+  --formlabel: #a78295;
 }
 
 body {
@@ -36,7 +37,7 @@ body {
 }
 
 header {
-  background-color: var(--navbar);
+  background-color: var(--dashboard-cards);
   position: absolute;
   top: 0;
   left: 250px;
@@ -50,6 +51,9 @@ header {
   z-index: 5000;
 }
 
+.hide {
+  display: none;
+}
 /* For navbar */
 
 nav {
@@ -95,9 +99,6 @@ ul {
   padding-left: 15px;
   font-size: 35px;
   text-transform: uppercase;
-}
-.MANAGER {
-  font-size: ;
 }
 
 a {
@@ -189,7 +190,7 @@ textarea {
   width: 100%;
   padding: 10px;
   outline: 0;
-  border: 1px solid #fff;
+
   color: #001c30;
   font-size: 15px;
   background-color: var(--inputcolor);
@@ -200,16 +201,15 @@ textarea {
   height: 200px;
 }
 .create_form label {
-  height: 100%;
   font-size: 19px;
   padding: 10px;
-  cursor: text;
+  color: var(--anchortag);
 }
 .create_form select {
   width: 100%;
   padding: 10px;
   outline: 0;
-  border: 1px solid #fff;
+
   color: #001c30;
   font-size: 15px;
   background-color: var(--inputcolor);
@@ -226,6 +226,27 @@ textarea {
   align-items: center;
 }
 
+.create_form input[type="submit"] {
+  background-color: var(--navbar);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create_form input[type="submit"]:hover {
+  background-color: var(--note-card);
+}
+
+.create_form input[type="submit"]:active {
+  transform: translateY(2px);
+}
+
+.create_form input[type="submit"]:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
 /* ********************add user********************** */
 
 .adduser-form {
@@ -236,18 +257,26 @@ textarea {
   align-items: center;
 }
 
+.adduser-form form {
+  padding: 30px;
+  max-width: 90%;
+  width: 950px;
+  background-color: var(--forms);
+  border-radius: 12px;
+}
+
 .inputflex {
+  justify-content: left;
   display: flex;
   gap: 20px;
-  align-items: center;
+  align-items: left;
 }
 
 .adduser-form input,
 textarea {
   width: 100%;
   padding: 10px;
-  outline: 0;
-  border: 1px solid #fff;
+
   color: #001c30;
   font-size: 15px;
   background-color: var(--inputcolor);
@@ -255,14 +284,14 @@ textarea {
 }
 
 #profile-pic {
-  width: 50%;
+  width: 70%;
 }
 
 .adduser-form select {
   width: 100%;
   padding: 10px;
   outline: 0;
-  border: 1px solid #fff;
+
   color: #001c30;
   font-size: 15px;
   background-color: var(--inputcolor);
@@ -273,11 +302,35 @@ textarea {
   height: 200px;
 }
 .adduser-form label {
+  color: var(--anchortag);
   height: 100%;
   font-size: 19px;
   padding: 10px;
   cursor: text;
 }
+
+.adduser-form input[type="submit"] {
+  background-color: var(--navbar);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.adduser-form input[type="submit"]:hover {
+  background-color: var(--note-card);
+}
+
+.adduser-form input[type="submit"]:active {
+  transform: translateY(2px);
+}
+
+.adduser-form input[type="submit"]:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
 /* ************************for view task **************************/
 
 .tasks {
@@ -576,7 +629,7 @@ textarea {
 }
 
 .swiper {
-  margin-top: 20px;
+  margin-top: 10px;
   height: 100px;
 }
 
@@ -597,13 +650,15 @@ textarea {
 .employee {
   margin-top: 10px;
   display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 20px;
 }
 .e-logo {
-  width: 65px;
-  height: 60px;
-  border-radius: 50%;
-  margin-left: 40px;
-  margin-top: 5px;
+  width: 90px;
+  height: 80px;
+  border-radius: 40%;
+
   border: solid rgb(76, 100, 165);
 }
 .e-description {
@@ -618,9 +673,8 @@ textarea {
 
 .slide-container {
   max-width: 500px;
-  max-height: 170px;
+  max-height: 180px;
   padding: 10px;
-  /* background-color: var(--cards); */
 }
 
 .bottom-dash {
@@ -666,6 +720,7 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 5px;
   width: 100%;
   height: 100%;
 }
@@ -675,8 +730,12 @@ textarea {
   justify-content: center;
   align-items: center;
 }
+h1 {
+  color: var(--navbar);
+}
 .total-title {
   font-size: 30px;
+  color: var(--navbar);
 }
 
 .graph {

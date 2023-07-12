@@ -21,36 +21,37 @@
         <div class="inputflex">
           <div class="input-group">
             <label for="fname">First name</label>
-            <input id="fname" name="fname" type="text" /><br />
+            <input id="fname" name="fname" type="text" />
             <span class="errors" id="name"></span>
           </div>
 
           <div class="input-group">
             <label for="lastname">Last name</label>
             <input id="lastname" name="lastname" type="text" />
-            <span id="slname"></span>
+            <span class="errors" id="slname"></span>
           </div>
 
 
           <div class="input-group">
             <label for="profile-pic">Profile Picture :</label>
-            <input id="profile-pic" name="profile-pic" type="file" />
+            <input id="profile-pic" name="profile-pic" type="file" accept=".jpg, .png" placeholder="" />
           </div>
 
         </div>
 
         <div class="inputflex">
           <div class="input-group">
-            <label for="username">Username</label>
-            <input id="username" name="username" type="text" />
-            <span id="susername"></span>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" />
+            <span class="errors" id="semail"></span>
           </div>
 
           <div class="input-group">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" />
-            <span id="semail"></span>
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" />
+            <span class="errors" id="susername"></span>
           </div>
+
           <div class="input-group">
             <label for="role">Register as</label>
             <select name="role" id="role">
@@ -65,28 +66,28 @@
           <div class="input-group">
             <label for="password">Password</label>
             <input id="password" name="password" type="password" />
-            <span id="spassword"></span>
+            <span class="errors" id="spassword"></span>
           </div>
 
           <div class="input-group">
             <label for="repassword">Retype Password</label>
             <input id="repassword" name="rpassword" type="password" />
-            <span id="srepassword"></span>
+            <span class="errors" id="srepassword"></span>
           </div>
 
           <div class="input-group">
             <label for="pnumber">Phone Number</label>
             <input id="pnumber" name="pnumber" type="number" />
-            <span id="sphonenumber"></span>
+            <span class="errors" id="sphonenumber"></span>
           </div>
         </div>
 
         <div class="input-group">
           <label for="description">Description</label>
-          <textarea id="description" name="description"></textarea>
+          <textarea id="description" name="description" placeholder="Enter employee description..."></textarea>
         </div>
 
-        <input type="submit" class="button-small" style="background-color: grey" name="submit" value="Register" />
+        <input type="submit" name="submit" value="Register" />
       </form>
     </div>
   </div>
