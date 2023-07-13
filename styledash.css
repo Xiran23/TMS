@@ -54,7 +54,6 @@ header {
 .hide {
   display: none;
 }
-/* For navbar */
 
 nav {
   background-color: var(--navbar);
@@ -150,17 +149,6 @@ a:hover {
   color: blue;
   cursor: pointer;
 }
-
-/* .logout-div {
-  bottom: 100px;
-  align-items: center;
-  display: flex;
-
-  align-items: center;
-  margin-top: 100px;
-} */
-
-/* for container */
 
 .container {
   margin-left: 250px;
@@ -638,10 +626,10 @@ textarea {
   margin-bottom: 50px;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.01);
   color: grey;
+  border: 1px solid #fff;
 }
 
 .swiper {
-  margin-top: 10px;
   height: 100px;
 }
 
@@ -660,11 +648,11 @@ textarea {
   color: var(--navbar);
 }
 .employee {
-  margin-top: 10px;
+  margin-top: px;
   display: flex;
   justify-content: left;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 }
 .e-logo {
   width: 90px;
@@ -674,10 +662,9 @@ textarea {
   border: solid rgb(76, 100, 165);
 }
 .e-description {
-  margin-top: 5px;
   margin-bottom: 5px;
   padding: 5px 10px 5px 5px;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.5;
   text-align: justify;
   color: #798e94;
@@ -686,7 +673,7 @@ textarea {
 .slide-container {
   max-width: 500px;
   max-height: 180px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .bottom-dash {

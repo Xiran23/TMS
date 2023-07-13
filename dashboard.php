@@ -65,7 +65,7 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <?php foreach ($users as $user) : ?>
           <div class="card swiper-slide">
             <div class="employee">
-              <img class="e-logo" src="uploads/<?php echo $user["profilepic"]; ?>" alt="Employee Image" />
+              <img class="e-logo" src="uploads/<?php echo $user["profilepic"]; ?>" alt="Employee Image" style=" object-position: center;" />
               <div class="e-text">
                 <h2 class="employee-name">
                   <?php echo $user["firstname"] . " " . $user["lastname"]; ?>
@@ -147,7 +147,7 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
             </div>
             <div class="task-bottom">
               <div class="total-title">
-                <h5>Total Notice</h5>
+                <h5>Total Notices</h5>
               </div>
 
               <div class="total-tasks">
@@ -184,7 +184,7 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
           <div>
             <h3 style="text-align: center; margin-top: 20px">
-              Balance of staff and tasks
+              Balance of Staff and Tasks
             </h3>
           </div>
 
