@@ -100,7 +100,7 @@
 
 
 
-        <input class="button-small" style="background-color: grey;" type="submit" value="submit" name="submit" id="submit">
+        <input type="submit" value="submit" name="submit" id="submit">
 
 
       </form>
@@ -140,7 +140,7 @@
       return false;
     }
 
-    if (empID == "") {  
+    if (empID == "") {
       alert("Employee ID must be filled out");
       return false;
     }

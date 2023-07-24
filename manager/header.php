@@ -1,31 +1,19 @@
 <?php
 session_start();
-// if(isset($_SESSION['uname'])){
 
-
-
-// }else{
-//   echo "<script> location.href='login.php'; </script>";
-
-// }
 
 ?>
 
 
 
 <?php
-// session_start();//alerady in header.php
-if(isset($_SESSION['username'])){
+
+if (isset($_SESSION['username'])) {
   $use = $_SESSION['username'];
-
-  // echo "<script> alert('value is set: $use') </script>";
-
-}
-else{
+} else {
   echo "<script> location.href='login.php'; </script>";
-
 }
-if(isset($_POST['logout'])){
+if (isset($_POST['logout'])) {
   session_unset();
   session_destroy();
   echo "<script> location.href='login.php'; </script>";
@@ -33,83 +21,63 @@ if(isset($_POST['logout'])){
 
 ?>
 <header>
-    <label>USER: <?php echo  $_SESSION['username'] ?></label>
-
+  <label>USER: <?php echo  $_SESSION['username'] ?></label>
 
 </header>
 
 <nav>
-        <ul>
-          <li>
-            <a href="#" class="logo">
-              <img src="../images/Picture2.png" alt="" />
-              <span class="ADMIN">Manager</span>
-            </a>
-          </li>
+  <ul>
+    <li>
+      <a href="#" class="logo">
+        <img src="../images/Picture2.png" alt="" />
+        <span class="ADMIN">Manager</span>
+      </a>
+    </li>
 
-          <li>
-            <a href="dashboard.php" onclick="Opensection('main-dashboard')">
-              <img class="dashlogo" src="../images/icon/dashboard.png" alt="" />
-              <span class="nav-item">DASHBOARD</span>
-            </a>
-          </li>
-          <!-- creating TASKS -->
-          <li>
-            <a href="createtask.php" onclick="createTask()">
-              <img
-                class="dashlogo"
-                src="../images/icon/update.png"
-                alt=""
-              />
-              <span class="nav-item">CREATE TASKS</span>
-            </a>
-          </li>
+    <li>
+      <a href="dashboard.php" onclick="Opensection('main-dashboard')">
+        <img class="dashlogo" src="../images/icon/dashboard.png" alt="" />
+        <span class="nav-item">DASHBOARD</span>
+      </a>
+    </li>
+    <!-- creating TASKS -->
+    <li>
+      <a href="createtask.php" onclick="createTask()">
+        <img class="dashlogo" src="../images/icon/update.png" alt="" />
+        <span class="nav-item">CREATE TASKS</span>
+      </a>
+    </li>
 
-           <!-- view TASKS -->
-           <li>
-            <a href="viewtask.php" onclick="viewTask()">
-              <img
-                class="dashlogo"
+    <!-- view TASKS -->
+    <li>
+      <a href="viewtask.php" onclick="viewTask()">
+        <img class="dashlogo" src="images/icon/update.png" alt="" />
+        <span class="nav-item">view TASKS</span>
+      </a>
+    </li>
 
-                src="images/icon/update.png"
-                alt=""
-              />
-              <span class="nav-item">view TASKS</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="adduser.php" onclick="">
-              <img
-                class="dashlogo"
-
-                src="images/icon/update.png"
-                alt=""
-              />
-              <span class="nav-item">ADD-Users</span>
-            </a>
-          </li>
-          <li>
-            <a href="listuser.php" onclick="">
-              <img
-                class="dashlogo"
-
-                src="images/icon/update.png"
-                alt=""
-              />
-              <span class="nav-item">list-Users</span>
-            </a>
-          </li>
-           <li>
-            <a href="#" class="logout">
-              <form method="POST">
-                <input type="submit" value="logout" name="logout"><label></label>
-              </form>
-              <!--
+    <li>
+      <a href="adduser.php" onclick="">
+        <img class="dashlogo" src="images/icon/update.png" alt="" />
+        <span class="nav-item">ADD-Users</span>
+      </a>
+    </li>
+    <li>
+      <a href="listuser.php" onclick="">
+        <img class="dashlogo" src="images/icon/update.png" alt="" />
+        <span class="nav-item">list-Users</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="logout">
+        <form method="POST">
+          <input type="submit" value="logout" name="logout"><label></label>
+        </form>
+        <!--
               <span class="nav-item"> -->
-                <!-- Logout -->
-              </span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+        <!-- Logout -->
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>
