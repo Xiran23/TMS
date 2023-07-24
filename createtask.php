@@ -51,8 +51,12 @@
 
                 $firstname = $employee['username'];
                 $id = $employee['id'];
+                $role = $employee['role'];
+                if ($role == 3){
+                  
+                  echo "<option value='$id'>$firstname </option>";
+                }
 
-                echo "<option value='$id'>$firstname </option>";
               }
               ?>
             </select>
@@ -172,10 +176,10 @@ if (isset($_POST['submit'])) {
 
   if (mysqli_query($conn, $query)) {
 
-    echo "<script> alert(1); </script>";
+    echo '<script> alert("Task Created Sucessfull"); </script>';
+    // echo "<script> alert(1); </script>";
   } else {
     echo "failed";
-    echo "<script> alert(0); </script>";
   }
 }
 ?>

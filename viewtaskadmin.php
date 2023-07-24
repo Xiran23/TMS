@@ -4,7 +4,7 @@ require "config/db.php";
 
 //fetch query
 
-$query = "SELECT *FROM tasks ";
+$query = "SELECT *FROM tasks ORDER BY created_at DESC  ";
 
 $result = mysqli_query($conn, $query);
 
@@ -110,10 +110,10 @@ mysqli_free_result($result);
                     </div> 
                   
                     <div class="task-button">
-                      <!-- <button class="btn-primary">Accept task</button> -->
+                      <!-- <button class="btn-primary">dELETE task</button> -->
                       <form method="post" action="updateanddelete.php">
                       <input name="userid" type="hidden" value="<?= $task["task_id"] ?>">
-                      <input class="btn-primary" type="submit" value="Delete" id="" name="delete">
+                      <input class="btn-primary delete" type="submit" value="Delete" id="delete" name="delete">
                       </form>
                     </div>
               
@@ -303,6 +303,38 @@ mysqli_free_result($result);
   // function AdminDashboard() {
   //   // task accept admin dashboard maaa dekhauneh
   // }
+
+
+  // var removetasks =document.querySelectorAll(".delete");
+  // for(var i = 0 ; i<removetasks.length; i++){
+  //   removetask =removetasks[i];
+  //   removetasks.addEventListener('click',function(){
+  //     alert("this");
+  //   })
+  // }
+ 
+  var removetasks = document.querySelectorAll(".delete");
+
+  for (var i = 0; i < removetasks.length; i++) {
+    var removetask = removetasks[i];
+
+    removetask.addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      var flag = confirm("Are you sure you want to remove user?");
+      if (flag === true) {
+        // Submit the parent form if the user confirms
+        this.closest('form').submit();
+        //closeset () methos ley simliar or nearest ancestor of the current element that matches a given selector
+        // harmo form is the closest ancestor 
+      } else {
+      
+      }
+    });
+  }
+
+
+
 </script>
 
 <!-- Swiper JS -->

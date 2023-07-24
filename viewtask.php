@@ -4,7 +4,7 @@ require "config/db.php";
 
 //fetch query
 
-$query = "SELECT *FROM tasks ";
+$query = "SELECT *FROM tasks ORDER BY created_at DESC ";
 
 $result = mysqli_query($conn, $query);
 

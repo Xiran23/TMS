@@ -82,9 +82,9 @@
 
             <label for="">Register as </label>
             <select name="role" id="">
-              <option value="1">admin</option>
-              <option value="2">Manager</option>
               <option value="3">Staff</option>
+              <option value="2">Manager</option>
+              <option value="1">admin</option>
             </select>
 
           </div>
@@ -327,7 +327,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
            ('$fname', '$lastname', '$username', '$email', '$role', '$password', '$phonenumber', '$profilepic', '$description')";
 
     if (mysqli_query($conn, $query)) {
-      echo 'Form submitted successfully!';
+      // echo 'Form submitted successfully!';
+      echo "<script>alert('User added Sucessfull!!!')</script>";
     } else {
       echo 'Error: ' . mysqli_error($conn);
     }
