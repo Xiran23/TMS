@@ -14,12 +14,12 @@ html {
 }
 
 :root {
-  --navbar: #e23e57;
-  --dashboard: #88304e;
-  --forms: #522546;
-  --dashboard-cards: #311d3f;
+  --navbar: #48466d;
+  --dashboard: #3d84a8;
+  --forms: #46cdcf;
+  --dashboard-cards: #abedd8;
   --note-card: #ff9292;
-  --inputcolor: #ffb4b4;
+  --inputcolor: var(--dashboard);
   --anchortag: #fff; /*ffcf70 */
 
   --priority_high: #eb455f;
@@ -28,6 +28,7 @@ html {
   --priority_all: yellow;
   --task_description: #862b0d;
   --table_header: #b5c99a;
+  --formlabel: #a78295;
 }
 
 body {
@@ -36,7 +37,7 @@ body {
 }
 
 header {
-  background-color: var(--navbar);
+  background-color: var(--dashboard-cards);
   position: absolute;
   top: 0;
   left: 250px;
@@ -50,7 +51,9 @@ header {
   z-index: 5000;
 }
 
-/* For navbar */
+.hide {
+  display: none;
+}
 
 nav {
   background-color: var(--navbar);
@@ -73,8 +76,9 @@ ul {
 }
 
 .logo {
-  text-align: center;
   display: flex;
+  justify-content: left;
+  align-items: center;
 
   margin-top: 0 0 0 10px;
 
@@ -125,25 +129,26 @@ a:hover {
   transition: 0.5s;
 }
 
-.logout {
-  color: #ffcf70;
-  margin-bottom: 22px;
-}
-
-.logt form {
-  background-color: var(--navbar);
-}
-
-.logout-div {
-  bottom: 100px;
-  align-items: center;
+.flex {
   display: flex;
-
+  justify-content: space-between;
   align-items: center;
-  margin-top: 100px;
 }
 
-/* for container */
+.logout {
+  color: var(--dashboard);
+  margin-bottom: 10px;
+  margin-right: 10px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout:hover {
+  color: blue;
+  cursor: pointer;
+}
 
 .container {
   margin-left: 250px;
@@ -185,7 +190,7 @@ textarea {
   width: 100%;
   padding: 10px;
   outline: 0;
-  border: 1px solid #fff;
+
   color: #001c30;
   font-size: 15px;
   background-color: var(--inputcolor);
@@ -194,20 +199,21 @@ textarea {
 
 .create_form textarea {
   height: 200px;
-  background-color: var(--inputcolor);
 }
 .create_form label {
-  height: 100%;
   font-size: 19px;
   padding: 10px;
-  cursor: text;
+  color: var(--anchortag);
 }
 .create_form select {
-  border-radius: 12px;
   width: 100%;
   padding: 10px;
+  outline: 0;
+
+  color: #001c30;
   font-size: 15px;
   background-color: var(--inputcolor);
+  border-radius: 12px;
 }
 #myInputField {
   width: 40px;
@@ -220,87 +226,109 @@ textarea {
   align-items: center;
 }
 
-/* ****************8 */
-
-.textareaa {
-  margin-bottom: 20px;
-}
-
-.textareaa label {
-  vertical-align: top;
-}
-
-.textareaa textarea {
-  width: 100%;
-  height: 120px;
-}
-
-.t_high {
-  background-color: var(--priority_high);
-}
-.t_medium {
-  background-color: var(--priority_medium);
-}
-.t_low {
-  background-color: var(--priority_low);
-}
-.t_all {
-  background-color: var(--priority_all);
-}
-
-.button-small {
-  color: #ddd;
-  cursor: pointer;
+.create_form input[type="submit"] {
+  background-color: var(--navbar);
+  color: white;
   padding: 10px 20px;
-  font-size: 16px;
   border: none;
-  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+.create_form input[type="submit"]:hover {
+  background-color: var(--note-card);
+}
+
+.create_form input[type="submit"]:active {
+  transform: translateY(2px);
+}
+
+.create_form input[type="submit"]:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
 /* ********************add user********************** */
 
-.register-form {
-  max-width: 400px;
-  text-align: center;
-  padding: 30px;
-  margin-top: 50px;
-  margin-left: 30px;
-  text-align: left;
-  background-color: var(--forms);
-  border-radius: 5px;
-}
-
-.form-input {
+.adduser-form {
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 12px;
 }
 
-.form-input label {
-  flex: 1;
-  margin-right: 10px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #ddd;
+.adduser-form form {
+  padding: 30px;
+  max-width: 90%;
+  width: 950px;
+  background-color: var(--forms);
+  border-radius: 12px;
 }
 
-.form-input input[type="text"],
-.form-input input[type="email"],
-.form-input select,
-.form-input input[type="number"] {
-  flex: 2;
+.inputflex {
+  justify-content: left;
+  display: flex;
+  gap: 20px;
+  align-items: left;
+}
+
+.adduser-form input,
+textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 14px;
-  color: #333;
+
+  color: #001c30;
+  font-size: 15px;
+  background-color: var(--inputcolor);
+  border-radius: 12px;
 }
 
-.errors {
-  color: red;
-  font-size: 12px;
+#profile-pic {
+  width: 70%;
+}
+
+.adduser-form select {
+  width: 100%;
+  padding: 10px;
+  outline: 0;
+
+  color: #001c30;
+  font-size: 15px;
+  background-color: var(--inputcolor);
+  border-radius: 12px;
+}
+
+.adduser-form textarea {
+  height: 200px;
+}
+.adduser-form label {
+  color: var(--anchortag);
+  height: 100%;
+  font-size: 19px;
+  padding: 10px;
+  cursor: text;
+}
+
+.adduser-form input[type="submit"] {
+  background-color: var(--navbar);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.adduser-form input[type="submit"]:hover {
+  background-color: var(--note-card);
+}
+
+.adduser-form input[type="submit"]:active {
+  transform: translateY(2px);
+}
+
+.adduser-form input[type="submit"]:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 /* ************************for view task **************************/
@@ -373,6 +401,27 @@ textarea {
   background-color: var(--priority_high);
 }
 
+.t_high {
+  background-color: var(--priority_high);
+}
+.t_medium {
+  background-color: var(--priority_medium);
+}
+.t_low {
+  background-color: var(--priority_low);
+}
+.t_all {
+  background-color: var(--priority_all);
+}
+
+.button-small {
+  color: #ddd;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+}
 .task-status {
   background-color: #333;
   width: max-content;
@@ -533,16 +582,16 @@ textarea {
 }
 
 .note-card {
-  margin-top: 10px;
+  margin-top: 5px;
   background-color: var(--note-card);
   border-radius: 12px;
-  padding: 15px;
+  padding: 10px;
 }
 
 .note-cards {
-  max-width: 80%;
+  max-width: 90%;
   display: flex;
-  justify-content: space-between;
+
   align-items: center;
   gap: 15px;
   flex-wrap: wrap;
@@ -577,10 +626,10 @@ textarea {
   margin-bottom: 50px;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.01);
   color: grey;
+  border: 1px solid #fff;
 }
 
 .swiper {
-  margin-top: 20px;
   height: 100px;
 }
 
@@ -599,22 +648,23 @@ textarea {
   color: var(--navbar);
 }
 .employee {
-  margin-top: 10px;
+  margin-top: px;
   display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
 }
 .e-logo {
-  width: 65px;
-  height: 60px;
-  border-radius: 50%;
-  margin-left: 40px;
-  margin-top: 5px;
+  width: 90px;
+  height: 80px;
+  border-radius: 40%;
+
   border: solid rgb(76, 100, 165);
 }
 .e-description {
-  margin-top: 5px;
   margin-bottom: 5px;
   padding: 5px 10px 5px 5px;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.5;
   text-align: justify;
   color: #798e94;
@@ -622,9 +672,8 @@ textarea {
 
 .slide-container {
   max-width: 500px;
-  max-height: 170px;
-  padding: 10px;
-  /* background-color: var(--cards); */
+  max-height: 180px;
+  padding: 5px;
 }
 
 .bottom-dash {
@@ -670,6 +719,7 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 5px;
   width: 100%;
   height: 100%;
 }
@@ -679,8 +729,12 @@ textarea {
   justify-content: center;
   align-items: center;
 }
+h1 {
+  color: var(--navbar);
+}
 .total-title {
   font-size: 30px;
+  color: var(--navbar);
 }
 
 .graph {

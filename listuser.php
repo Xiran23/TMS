@@ -96,7 +96,8 @@
 <td>
 
 
-<button class="btn btn-danger"><a class="text-light" href="userdelete.php?deleteid='.$id.'">Delete</a></button>
+<button class="btn btn-danger delete" ><a class="text-light" href="userdelete.php?deleteid='.$id.'">Delete</a></button>
+
 </td>
 </tr>
 ';
@@ -130,5 +131,37 @@
 <!-- Initialize Swiper -->
 </html>
 
+<script>
+  var deleteButtons = document.querySelectorAll(".delete");
+
+  for (var i = 0; i < deleteButtons.length; i++) {
+    var deleteButton = deleteButtons[i];
+
+    deleteButton.addEventListener("click", function(event) {
+      event.preventDefault();
+      var flag = confirm("Are you sure you want to remove user?");
+      if (flag == true) {
+        window.location.href = this.querySelector("a").href;
+      }
+    });
+  }
+
+
+  
+    // var deleteconfirm = document.getElementsByClassName("delete");
+    // for(var i=0; i<= deleteconfirm.length; i++){
+    //     var deletes = deleteconfirm[i];
+
+    //     deletes.addEventListener("click",function(event){
+    //         event.preventDefault();
+    //         var flag = confirm("Are you sure you want to remove user");
+    //         if(flag == false ){
+    //         // alert("failed");
+    //         return false;
+    //         }
+    //     })
+    // }
+
+</script>
 
 
