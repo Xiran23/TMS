@@ -55,7 +55,7 @@
           <div>
             <label for="">Register as </label>
             <select name="role" id="">
-              <option value="1">admin</option>
+              <option value="3">staff</option>
               <option value="2">Manager</option>
               <option value="1">admin</option>
             </select>
