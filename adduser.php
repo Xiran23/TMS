@@ -70,6 +70,13 @@
           </div>
 
 
+<<<<<<< Updated upstream
+=======
+          <div class="input-group">
+            <label for="profile-pic">Profile PictureE :</label>
+            <input id="profile-pic" name="profile-pic" type="file" accept=".jpg, .png" placeholder="" />
+          </div>
+>>>>>>> Stashed changes
 
           <div class="form-input">
 
