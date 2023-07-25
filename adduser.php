@@ -52,6 +52,7 @@
             <span class="errors" id="susername"></span>
           </div>
 
+          <div>
             <label for="">Register as </label>
             <select name="role" id="">
               <option value="1">admin</option>
