@@ -196,26 +196,31 @@ mysqli_free_result($result);
   console.log(currenttime);
 
   var remainingTimeELements = document.getElementsByClassName("remaining-time");
-
+  var gettaskbutton =document.getElementsByClassName('task-button');
+  
   function updateRemainingTime() {
     var now = new Date();
     // console.log(now);
     for (var i = 0; i < remainingTimeELements.length; i++) {
       // line 86 for refernce <!-- For example, a data-abc-def attribute corresponds to dataset.abcDef -->
       var startDate = new Date(remainingTimeELements[i].dataset.startDate);
-
+      
       var endDate = new Date(remainingTimeELements[i].dataset.endDate);
       var remainingTime = endDate - now;
       console.log(remainingTime);
       if (remainingTime > 0) {
+        
+        
         var days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
         var hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
-
+        
         remainingTimeELements[i].innerHTML = "Remaining Time: " + days + "d " + hours + "h " + minutes + "m " + seconds + "s";
       } else {
+        gettaskbutton[i].style.display='none';
         remainingTimeELements[i].innerHTML = "Time's Up!";
+
       }
     }
   }
