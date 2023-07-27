@@ -148,7 +148,7 @@ if (isset($_POST['logout'])) {
       <li>
         <a href="notice.php" onclick="">
           <img class="dashlogo" src="images/icon/leave.png" alt="" />
-          <span class="nav-item">Notes</span>
+          <span class="nav-item">Notice</span>
         </a>
       </li>
 
@@ -178,7 +178,7 @@ if (isset($_POST['logout'])) {
       <li>
         <a href="notice.php" onclick="">
           <img class="dashlogo" src="images/icon/leave.png" alt="" />
-          <span class="nav-item">Notes</span>
+          <span class="nav-item">Notice</span>
         </a>
       </li>
 
