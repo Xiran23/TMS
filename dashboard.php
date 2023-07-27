@@ -6,6 +6,20 @@ $resultTasks = mysqli_query($conn, $queryTasks);
 $rowTasks = mysqli_fetch_assoc($resultTasks);
 $totalTasks = $rowTasks['totalTasks'];
 
+$queryincompletetask = "SELECT COUNT(*) As incompletetask FROM tasks WHERE status = 'pending' OR status = 'in_progress'";
+$resultincompletetask = mysqli_query($conn, $queryincompletetask);
+$rowincompletetask = mysqli_fetch_array($resultincompletetask);
+$totalincompletetask = $rowincompletetask['incompletetask'];
+// echo $rowincompletetask;
+
+$querycompletetask = "SELECT COUNT(*) AS completedtask FROM tasks WHERE status = 'completed'";
+$resultcompletetask = mysqli_query($conn, $querycompletetask);
+$rowcompletetask = mysqli_fetch_array($resultcompletetask);
+$totalcompletetask = $rowcompletetask['completedtask'];
+// echo $rowincompletetask;
+
+
+
 $queryStaffs = "SELECT COUNT(*) AS totalStaffs FROM users WHERE role = 3";
 $resultStaffs = mysqli_query($conn, $queryStaffs);
 $rowStaffs = mysqli_fetch_assoc($resultStaffs);
@@ -100,119 +114,269 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <?php endforeach; ?>
       </div>
     </div>
+    <!-- ***************************************************************************************************************** -->
 
-    <div class="bottom-dash">
-      <div class="dash-left">
-        <div class="total">
+    <!-- FOr admin and managers -->
+    <?php if ($_SESSION['role'] == 1 || $_SESSION['role'] == 2) : ?>
 
-          <div class="total-card">
-            <div class="total-logo">
-              <img src="images/icon/check-list.png" width="90px" alt="" />
-            </div>
-            <div class="task-bottom">
-              <div class="total-title">
-                <h5>Total Tasks</h5>
+      <div class="bottom-dash">
+
+        <div class="dash-left">
+          <div class="total">
+
+            <div class="total-card">
+              <div class="total-logo">
+                <img src="images/icon/check-list.png" width="90px" alt="" />
               </div>
+              <div class="task-bottom">
+                <div class="total-title">
+                  <h5>Total Tasks</h5>
+                </div>
 
-              <div class="total-tasks">
-                <h1><?php echo $totalTasks; ?></h1>
+                <div class="total-tasks">
+                  <h1><?php echo $totalTasks; ?></h1>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="total">
+            <div class="total-card">
+              <div class="total-logo">
+                <img src="images/icon/engineers.png" width="90px" alt="" />
+              </div>
+              <div class="task-bottom">
+                <div class="total-title">
+                  <h5>Total Staffs</h5>
+                </div>
+
+                <div class="total-tasks">
+                  <h1><?php echo $totalStaffs; ?></h1>
+                </div>
               </div>
             </div>
           </div>
 
+          <div class="total">
 
+            <div class="total-card">
+              <div class="total-logo">
+                <img src="images/icon/announcement.png" width="90px" alt="" />
+              </div>
+              <div class="task-bottom">
+                <div class="total-title">
+                  <h5>Notices</h5>
+                </div>
+
+                <div class="total-tasks">
+                  <h1><?php echo $totalNotices; ?></h1>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="total">
+
+            <div class="total-card">
+              <div class="total-logo">
+                <img src="images/icon/shortlist.png" width="90px" alt="" />
+              </div>
+              <div class="task-bottom">
+                <div class="total-title">
+                  <h5>Total Users</h5>
+                </div>
+
+                <div class="total-tasks">
+                  <h1><?php echo $totalUsers; ?></h1>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="total">
-          <div class="total-card">
-            <div class="total-logo">
-              <img src="images/icon/engineers.png" width="90px" alt="" />
+
+        <div class="dash-right">
+          <div class="graph">
+            <div>
+              <canvas id="myChart" style="width: 500px; height: 370px"></canvas>
             </div>
-            <div class="task-bottom">
-              <div class="total-title">
-                <h5>Total Staffs</h5>
-              </div>
 
-              <div class="total-tasks">
-                <h1><?php echo $totalStaffs; ?></h1>
-              </div>
+            <div>
+              <h3 style="text-align: center; margin-top: 20px">
+                Task Status
+              </h3>
             </div>
-          </div>
-        </div>
 
-        <div class="total">
+            <script>
+              const xValues = ["Pending-tasks", "Completed-tasks"];
+              const yValues = [<?php echo $totalincompletetask; ?>, <?php echo $totalcompletetask; ?>];
+              const barColors = ["#b91d47", "#00aba9"];
 
-          <div class="total-card">
-            <div class="total-logo">
-              <img src="images/icon/announcement.png" width="90px" alt="" />
-            </div>
-            <div class="task-bottom">
-              <div class="total-title">
-                <h5>Total Notices</h5>
-              </div>
-
-              <div class="total-tasks">
-                <h1><?php echo $totalNotices; ?></h1>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="total">
-
-          <div class="total-card">
-            <div class="total-logo">
-              <img src="images/icon/shortlist.png" width="90px" alt="" />
-            </div>
-            <div class="task-bottom">
-              <div class="total-title">
-                <h5>Total Users</h5>
-              </div>
-
-              <div class="total-tasks">
-                <h1><?php echo $totalUsers; ?></h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="dash-right">
-        <div class="graph">
-          <div>
-            <canvas id="myChart" style="width: 500px; height: 370px"></canvas>
-          </div>
-
-          <div>
-            <h3 style="text-align: center; margin-top: 20px">
-              Balance of Staff and Tasks
-            </h3>
-          </div>
-
-          <script>
-            const xValues = ["Tasks", "staffs"];
-            const yValues = [<?php echo $totalTasks; ?>, <?php echo $totalStaffs; ?>];
-            const barColors = ["#b91d47", "#00aba9"];
-
-            new Chart("myChart", {
-              type: "pie",
-              data: {
-                labels: xValues,
-                datasets: [{
-                  backgroundColor: barColors,
-                  data: yValues,
-                }, ],
-              },
-              options: {
-                legend: {
-                  position: "top",
-                  align: "end",
+              new Chart("myChart", {
+                type: "pie",
+                data: {
+                  labels: xValues,
+                  datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues,
+                  }, ],
                 },
-              },
-            });
-          </script>
+                options: {
+                  legend: {
+                    position: "top",
+                    align: "end",
+                  },
+                },
+              });
+            </script>
+          </div>
         </div>
       </div>
-    </div>
+
+    <?php else : ?>
+      <!-- for staff here  -->
+      <?php
+      // $queryTasks = "SELECT COUNT(*) AS totalTasks FROM tasks";
+      // $resultTasks = mysqli_query($conn, $queryTasks);
+      // $rowTasks = mysqli_fetch_assoc($resultTasks);
+      // $totalTasks = $rowTasks['totalTasks'];
+
+      $user_id = $_SESSION['id'];
+      $queryuserstotaltask = "SELECT COUNT(*) AS usertotaltask from tasks WHERE user_id  = $user_id";
+      $resultuserstasks = mysqli_query($conn, $queryuserstotaltask);
+      $rowuserstasks = mysqli_fetch_array($resultuserstasks);
+      $totalusertasks = $rowuserstasks['usertotaltask'];
+
+      // $queryuserincompletetask = "SELECT COUNT(*) As incompletetask FROM tasks WHERE status = 'pending' OR status = 'in_progress'";
+      $queryuserincompletetask = "SELECT COUNT(*) AS incompletetask FROM tasks WHERE (status = 'pending' OR status = 'in_progress') AND user_id = $user_id";
+      $resultuserincompletetask = mysqli_query($conn, $queryuserincompletetask);
+      $rowuserincompletetask = mysqli_fetch_array($resultuserincompletetask);
+      $totaluserincompletetask = $rowuserincompletetask['incompletetask'];
+      // echo $rowincompletetask;
+
+      $queryusercompletetask = "SELECT COUNT(*) AS completedtask FROM tasks WHERE status = 'completed' AND user_id = $user_id";
+      $resultusercompletetask = mysqli_query($conn, $queryusercompletetask);
+      $rowusercompletetask = mysqli_fetch_array($resultusercompletetask);
+      $totalusercompletetask = $rowusercompletetask['completedtask'];
+      // echo $rowincompletetask;
+
+      ?>
+
+      <div class="bottom-dash">
+
+        <div class="dash-left">
+          <div class="total">
+
+            <div class="total-card">
+              <div class="total-logo">
+                <img src="images/icon/check-list.png" width="90px" alt="" />
+              </div>
+              <div class="task-bottom">
+                <div class="total-title">
+                  <h5>Total Tasks</h5>
+                </div>
+
+                <div class="total-tasks">
+
+                  <h1><?php echo $totalusertasks; ?></h1>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="total">
+            <div class="total-card">
+              <div class="total-logo">
+                <img src="images/icon/engineers.png" width="90px" alt="" />
+              </div>
+              <div class="task-bottom">
+                <div class="total-title">
+                  <h5>Remanning task</h5>
+                </div>
+
+                <div class="total-tasks">
+                  <h1><?php echo $totaluserincompletetask; ?></h1>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="total">
+
+            <div class="total-card">
+              <div class="total-logo">
+                <img src="images/icon/announcement.png" width="90px" alt="" />
+              </div>
+              <div class="task-bottom">
+                <div class="total-title">
+                  <h5>Notices</h5>
+                </div>
+
+                <div class="total-tasks">
+                  <h1><?php echo $totalNotices; ?></h1>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="total">
+
+            <div class="total-card">
+              <div class="total-logo">
+                <img src="images/icon/shortlist.png" width="90px" alt="" />
+              </div>
+              <div class="task-bottom">
+                <div class="total-title">
+                  <h5>Completed Tasks</h5>
+                </div>
+
+                <div class="total-tasks">
+                  <h1><?php echo $totalusercompletetask ; ?></h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-right">
+          <div class="graph">
+            <div>
+              <canvas id="myChart" style="width: 500px; height: 370px"></canvas>
+            </div>
+
+            <div>
+              <h3 style="text-align: center; margin-top: 20px">
+                Task Status
+              </h3>
+            </div>
+
+            <script>
+              const xValues = ["Pending-tasks", "Completed-tasks"];
+              const yValues = [<?php echo $totaluserincompletetask; ?>, <?php echo $totalusercompletetask; ?>];
+              const barColors = ["#b91d47", "#00aba9"];
+
+              new Chart("myChart", {
+                type: "pie",
+                data: {
+                  labels: xValues,
+                  datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues,
+                  }, ],
+                },
+                options: {
+                  legend: {
+                    position: "top",
+                    align: "end",
+                  },
+                },
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    <?php endif ?>
   </div>
 
   <!-- Swiper JS -->
