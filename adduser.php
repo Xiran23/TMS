@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="styledash.css" />
   <link rel="stylesheet" href="responsive.css" />
   <title>Dashboard</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -198,6 +199,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $phonenumber = $_POST['pnumber'];
   $description = $_POST['description'];
 
+
+//   $querysql = "SELECT * FROM users where (username = '$username') ";
+//   $usernamequery = mysqli_query($conn,$querysql);
+//   if (mysqli_num_rows($usernamequery) > 0) {
+//     // echo "USER NAME ALREADYS EXIST";
+//     $errors['username'] = 'USER NAME ALREADYS EXIST';
+
+//   }
+
   // Validate first name
   if (empty($fname)) {
     $errors['fname'] = 'Please fill in the first name field.';
@@ -277,3 +287,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 mysqli_close($conn);
 ?>
+
+
+
