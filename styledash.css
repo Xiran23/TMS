@@ -705,7 +705,7 @@ textarea {
 .dashbottom {
   width: 98%;
   height: 90px;
-  background-color: red;
+  background-color: var(--forms);
   margin: auto;
   margin-top: 8px;
   margin-bottom: 8px;
