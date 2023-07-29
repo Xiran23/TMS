@@ -711,11 +711,10 @@ textarea {
   margin-bottom: 8px;
   border-radius: 12px;
   overflow: hidden;
-   white-space: nowrap;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dashbottom:hover .logo-slides {
@@ -726,8 +725,8 @@ textarea {
 }
 
 .logo-slides {
-margin: auto;
- 
+  margin: auto;
+
   animation: slide 5s infinite linear;
   display: inline-block;
 }
@@ -741,8 +740,6 @@ margin: auto;
     transform: translateX(-100%);
   }
 }
-
-
 
 .dash-left {
   border-radius: 12px;
