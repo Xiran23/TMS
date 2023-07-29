@@ -702,11 +702,53 @@ textarea {
   gap: 10px;
 }
 
+.dashbottom {
+  width: 98%;
+  height: 90px;
+  background-color: red;
+  margin: auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  overflow: hidden;
+   white-space: nowrap;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+}
+
+.dashbottom:hover .logo-slides {
+  animation-play-state: paused;
+}
+.dashbottom img {
+  padding-left: 40px;
+}
+
+.logo-slides {
+margin: auto;
+ 
+  animation: slide 5s infinite linear;
+  display: inline-block;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
+
 .dash-left {
   border-radius: 12px;
   width: 60%;
   background-color: var(--forms);
-  height: 440px;
+  height: 430px;
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
@@ -717,7 +759,7 @@ textarea {
 .dash-right {
   width: 40%;
   background-color: var(--forms);
-  height: 440px;
+  height: 430px;
   padding: 12px;
   border-radius: 12px;
 }

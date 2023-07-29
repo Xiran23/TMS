@@ -232,6 +232,38 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
           </div>
         </div>
       </div>
+      <div class="dashbottom">
+        <div class="logo-slides">
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        </div>
+        <div class="logo-slides">
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        </div>
+        <div class="logo-slides">
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        <img src="images/icon/shortlist.png" width="90px" alt="" />
+        </div>
+      </div>
 
     <?php else : ?>
       <!-- for staff here  -->
@@ -375,7 +407,9 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
             </script>
           </div>
         </div>
+
       </div>
+      
     <?php endif ?>
   </div>
 
