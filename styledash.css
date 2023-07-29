@@ -257,6 +257,35 @@ textarea {
   align-items: center;
 }
 
+#pnumber {
+  width: 80%;
+  margin-bottom: 30px;
+}
+#profile-pic {
+  width: 50%;
+}
+#username {
+  width: 280px;
+}
+
+#repassword {
+  width: 280px;
+}
+
+.align {
+  margin: auto;
+}
+
+.adduser-form select {
+  width: 80%;
+  padding: 10px;
+  color: #001c30;
+  font-size: 15px;
+  background-color: var(--inputcolor);
+  border-radius: 12px;
+  margin-bottom: 60px;
+}
+
 .adduser-form form {
   padding: 30px;
   max-width: 90%;
@@ -266,32 +295,16 @@ textarea {
 }
 
 .inputflex {
-  justify-content: left;
+  justify-content: space-between;
   display: flex;
-  gap: 20px;
-  align-items: left;
+
+  gap: 10px;
+  align-items: center;
 }
 
-.adduser-form input,
-textarea {
-  width: 100%;
+.adduser-form input {
+  width: 300px;
   padding: 10px;
-
-  color: #001c30;
-  font-size: 15px;
-  background-color: var(--inputcolor);
-  border-radius: 12px;
-}
-
-#profile-pic {
-  width: 70%;
-}
-
-.adduser-form select {
-  width: 100%;
-  padding: 10px;
-  outline: 0;
-
   color: #001c30;
   font-size: 15px;
   background-color: var(--inputcolor);
@@ -315,6 +328,7 @@ textarea {
   padding: 10px 20px;
   border: none;
   cursor: pointer;
+  width: 100%;
   transition: background-color 0.3s ease;
 }
 
@@ -576,25 +590,24 @@ textarea {
 }
 
 /* ****************NOTESS*********** */
-.note-card {
-  width: 330px;
-  height: fit-content;
-}
 
 .note-card {
-  margin-top: 5px;
+  flex: 1 0 330px; /* flex-grow: 1; flex-shrink: 0; flex-basis: 330px; */
   background-color: var(--note-card);
   border-radius: 12px;
+  width: 40%;
+  position: relative;
+  height: fit-content;
   padding: 10px;
+  margin: 5px;
 }
 
 .note-cards {
-  max-width: 90%;
+  width: 80%;
   display: flex;
-
-  align-items: center;
-  gap: 15px;
   flex-wrap: wrap;
+  justify-content: flex-start; /* Change to flex-start to stack cards from the left */
+  align-items: flex-start; /* Change to flex-start to align cards from the top */
   margin: 30px 80px;
 }
 
@@ -605,6 +618,18 @@ textarea {
 
 .note-heading {
   color: #0d47a1;
+}
+
+.clear {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
 }
 
 .note-description {
