@@ -260,7 +260,7 @@ textarea {
 .adduser-form form {
   padding: 30px;
   max-width: 90%;
-  width: 950px;
+  width: 1000px;
   background-color: var(--forms);
   border-radius: 12px;
 }
