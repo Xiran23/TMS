@@ -9,7 +9,7 @@ if (isset($_GET['deleteid'])) {
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
-        header('Location: notice.php'); // Redirect to the dashboard after successful deletion
+        header('Location: notice.php');
         exit();
     } else {
         die(mysqli_error($conn));
