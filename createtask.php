@@ -53,7 +53,7 @@
                 $id = $employee['id'];
                 $role = $employee['role'];
                 if ($role == 3){
-                  
+
                   echo "<option value='$id'>$firstname </option>";
                 }
 
@@ -64,7 +64,7 @@
 
           <div class="id">
 
-            <label for="emp">Employee_ID:</label>
+            <label for="emp">Employee_IDD:</label>
             <input name="empid" type="text" id="myInputField" readonly>
 
           </div>
