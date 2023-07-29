@@ -8,11 +8,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styledash.css" />
   <link rel="stylesheet" href="responsive.css">
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
   <title>Dashbord</title>
@@ -48,8 +50,8 @@
             <th scope="col">completed task</th>
             <th scope="col">password</th>
             <th scope="col">phonenumber</th>
-          <?php if($_SESSION['role']==1):?>
-            <th scope="col">operation</th>
+            <?php if ($_SESSION['role'] == 1) : ?>
+              <th scope="col">operation</th>
             <?php endif ?>
 
           </tr>
@@ -112,9 +114,10 @@
 
               $deletebutton = " ";
               if ($_SESSION['role'] == 1) {
-                $deletebutton = '<td> <button class="btn btn-danger delete" ><a class="text-light" href="userdelete.php?deleteid=' . $id . '">Delete</a></button> </td>';
+                $deletebutton = '<td> <button class=" delete" ><a class="userdelet" href="userdelete.php?deleteid=' . $id . '"><i class="fas fa-trash"></i></a></button> </td>';
               }
               echo '
+
 <tr>
 <td scope="row">' . $id . '</td>
 <td>' . $firstname . '</td>
