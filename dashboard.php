@@ -130,7 +130,7 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
               </div>
               <div class="task-bottom">
                 <div class="total-title">
-                  <h5>Total Tasks</h5>
+                  <h5>Totall Tasks</h5>
                 </div>
 
                 <div class="total-tasks">
@@ -332,7 +332,7 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 </div>
 
                 <div class="total-tasks">
-                  <h1><?php echo $totalusercompletetask ; ?></h1>
+                  <h1><?php echo $totalusercompletetask; ?></h1>
                 </div>
               </div>
             </div>
