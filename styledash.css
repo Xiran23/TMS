@@ -25,8 +25,9 @@ html {
   --priority_high: #eb455f;
   --priority_medium: #ea906c;
   --priority_low: #fae392;
-  --priority_all: yellow;
+  --priority_all: #ffffff;
   --task_description: #862b0d;
+
   --table_header: #b5c99a;
   --formlabel: #a78295;
 }
@@ -415,16 +416,16 @@ textarea {
   background-color: var(--priority_high);
 }
 
-.t_high {
+#sort-high {
   background-color: var(--priority_high);
 }
-.t_medium {
+#sort-medium {
   background-color: var(--priority_medium);
 }
-.t_low {
+#sort-low {
   background-color: var(--priority_low);
 }
-.t_all {
+#sort-all {
   background-color: var(--priority_all);
 }
 
@@ -436,6 +437,7 @@ textarea {
   border: none;
   border-radius: 4px;
 }
+
 .task-status {
   background-color: #333;
   width: max-content;
@@ -581,7 +583,7 @@ textarea {
 /* ****************NOTESS*********** */
 
 .note-card {
-  flex: 1 0 330px;
+  flex: 1 3 500px;
   background-color: var(--note-card);
   border-radius: 12px;
   width: 40%;
@@ -589,7 +591,6 @@ textarea {
   height: fit-content;
   padding: 10px;
   margin: 5px;
-  top: 0;
 }
 
 .note-cards {
@@ -597,8 +598,8 @@ textarea {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: flex-start;
-  margin: 30px 80px;
+  align-items: first baseline;
+  margin: auto;
 }
 
 .note-name {
@@ -686,13 +687,13 @@ textarea {
 }
 
 .slide-container {
-  max-width: 500px;
+  max-width: 98%;
   max-height: 180px;
   padding: 5px;
 }
 
 .bottom-dash {
-  margin-top: 20px;
+  margin-top: 8px;
   max-height: 100vh;
   width: 98%;
   display: flex;

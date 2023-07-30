@@ -52,11 +52,10 @@
                 $firstname = $employee['username'];
                 $id = $employee['id'];
                 $role = $employee['role'];
-                if ($role == 3){
-                  
+                if ($role == 3) {
+
                   echo "<option value='$id'>$firstname </option>";
                 }
-
               }
               ?>
             </select>
@@ -94,7 +93,7 @@
 
         <div class="input-group">
           <label for="">description:</label>
-          <textarea name="tdesc" placeholder="Enter task description..."></textarea>
+          <textarea name="tdesc" placeholder=""></textarea>
         </div>
 
 
