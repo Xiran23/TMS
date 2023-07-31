@@ -37,9 +37,9 @@ mysqli_free_result($result);
     <section class="dashviewtask">
 
       <div class="sort-buttons">
-        <button class="button-small" style=" background-color:#ff9999;" id="sort-high">High Priority</button>
-        <button class="button-small" style=" background-color:#ffffb3;" id="sort-medium">Medium Priority</button>
-        <button class="button-small" style=" background-color:#b3ffb3;" id="sort-low">Low Priority</button>
+        <button class="button-small" id="sort-high">High Priority</button>
+        <button class="button-small" id="sort-medium">Medium Priority</button>
+        <button class="button-small" id="sort-low">Low Priority</button>
         <button class="button-small" id="sort-all">All Tasks</button>
       </div>
 
@@ -52,106 +52,106 @@ mysqli_free_result($result);
 
 
 
-       
 
 
 
-            <div class="t-card ">
-              <div class="task-left-right">
-                <div class="card-left">
-                  <div class="task-title">
+
+          <div class="t-card ">
+            <div class="task-left-right">
+              <div class="card-left">
+                <div class="task-title">
 
 
-                    <div class="task-heading">
-                      <div class="heading-icon">
-                        <img src="images/icon/circle-solid-24.png" width="20px" alt="right.png">
-                      </div>
-                      <div class="heading-text">
-                        <h2 class="task-no"><?php echo $task["title"]; ?></h2>
-                        <span class="issue-date"><?php echo date('Y-m-d', strtotime($task['created_at'])); ?>,<?php echo date('H:i:s', strtotime($task['created_at'])); ?></span>
-
-                      </div>
+                  <div class="task-heading">
+                    <div class="heading-icon">
+                      <img src="images/icon/circle-solid-24.png" width="20px" alt="right.png">
                     </div>
-
-                    <div>
+                    <div class="heading-text">
+                      <h2 class="task-no"><?php echo $task["title"]; ?></h2>
+                      <span class="issue-date"><?php echo date('Y-m-d', strtotime($task['created_at'])); ?>,<?php echo date('H:i:s', strtotime($task['created_at'])); ?></span>
 
                     </div>
+                  </div>
 
-
-
-
-                    <div class="task-description">
-                      <p><?php echo $task["description"]; ?></p>
-                    </div>
-
-
-
-
-
-                    <div class="task-status">
-                      <span class="task-progress"><?php echo $task['status']; ?></span>
-                    </div>
+                  <div>
 
                   </div>
-                </div>
 
-                <div class="task-right">
-                  <div class="task-assigned-employee"><img src="images/icon/user-logo.png" alt="logo" width="30"> <span>
-                      <?php echo $task["user_id"]; ?></span> </div>
 
-                      
-              
-                    <div class="task-button">
-                      <!-- <button class="btn-primary">Accept task</button> -->
-                      <form method="post" action="updateanddelete.php">
-                        <input name="userid" type="hidden" value="<?= $task["task_id"] ?>">
-                        <input class="btn-primary" type="submit" value="Edit" id="" name="edit">
-                      </form>
-                    </div> 
-                  
-                    <div class="task-button">
-                      <!-- <button class="btn-primary">dELETE task</button> -->
-                      <form method="post" action="updateanddelete.php">
-                      <input name="userid" type="hidden" value="<?= $task["task_id"] ?>">
-                      <input class="btn-primary delete" type="submit" value="Delete" id="delete" name="delete">
-                      </form>
-                    </div>
-              
 
-            
-                  <!-- ************************************** -->
+
+                  <div class="task-description">
+                    <p><?php echo $task["description"]; ?></p>
+                  </div>
 
 
 
 
 
-
-                  <div class="task-priority">
-                    <h2 class="task-no" id="priority"><?php echo $task["task_priority"]; ?></h2>
+                  <div class="task-status">
+                    <span class="task-progress"><?php echo $task['status']; ?></span>
                   </div>
 
                 </div>
+              </div>
 
+              <div class="task-right">
+                <div class="task-assigned-employee"><img src="images/icon/user-logo.png" alt="logo" width="30"> <span>
+                    <?php echo $task["user_id"]; ?></span> </div>
+
+
+
+                <div class="task-button">
+                  <!-- <button class="btn-primary">Accept task</button> -->
+                  <form method="post" action="updateanddelete.php">
+                    <input name="userid" type="hidden" value="<?= $task["task_id"] ?>">
+                    <input class="btn-primary" type="submit" value="Edit" id="" name="edit">
+                  </form>
+                </div>
+
+                <div class="task-button">
+                  <!-- <button class="btn-primary">dELETE task</button> -->
+                  <form method="post" action="updateanddelete.php">
+                    <input name="userid" type="hidden" value="<?= $task["task_id"] ?>">
+                    <input class="btn-primary delete" type="submit" value="Delete" id="delete" name="delete">
+                  </form>
+                </div>
+
+
+
+                <!-- ************************************** -->
+
+
+
+
+
+
+                <div class="task-priority">
+                  <h2 class="task-no" id="priority"><?php echo $task["task_priority"]; ?></h2>
+                </div>
 
               </div>
-              <?php if($task['status']=='inprogress' && $task['status']=='pending'): ?>
+
+
+            </div>
+            <?php if ($task['status'] == 'inprogress' && $task['status'] == 'pending') : ?>
               <div class="bottom-card">
                 <div class="remaining-time" data-start-date="<?php echo $task['created_at']; ?>" data-end-date="<?php echo $task['due_date']; ?>"></div>
               </div>
 
-              <?php else :?>
-                <div class="bottom-card">
+            <?php else : ?>
+              <div class="bottom-card">
 
-                  TASK COMPLETED
-                </div>
+                TASK COMPLETED
+              </div>
 
-                <?php endif; ?>
-
-
-            </div>
+            <?php endif; ?>
 
 
-   
+          </div>
+
+
+
 
         <?php endforeach; ?>
 
@@ -312,7 +312,7 @@ mysqli_free_result($result);
   //     alert("this");
   //   })
   // }
- 
+
   var removetasks = document.querySelectorAll(".delete");
 
   for (var i = 0; i < removetasks.length; i++) {
@@ -326,15 +326,12 @@ mysqli_free_result($result);
         // Submit the parent form if the user confirms
         this.closest('form').submit();
         //closeset () methos ley simliar or nearest ancestor of the current element that matches a given selector
-        // harmo form is the closest ancestor 
+        // harmo form is the closest ancestor
       } else {
-      
+
       }
     });
   }
-
-
-
 </script>
 
 <!-- Swiper JS -->
