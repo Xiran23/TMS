@@ -242,7 +242,13 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
           <img src="images/nike.png" width="400px" alt="" />
           <img src="images/nike.png" width="400px" alt="" />
           <img src="images/nike.png" width="400px" alt="" />
-          
+          <img src="images/nike.png" width="400px" alt="" />
+          <img src="images/khalti.png" width="400px" alt="" />
+          <img src="images/nike.png" width="400px" alt="" />
+          <img src="images/nike.png" width="400px" alt="" />
+          <img src="images/nike.png" width="400px" alt="" />
+          <img src="images/nike.png" width="400px" alt="" />
+          <img src="images/nike.png" width="400px" alt="" />
           
         </div>
      
@@ -403,12 +409,19 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
     var swiper1 = new Swiper(".mySwiper1", {
       slidesPerView: getSlidesPerView(),
       spaceBetween: 30,
-      freeMode: true,
+      loop: true, // Enable continuous loop
+      centeredSlides: true, // Enable centered slides during loop
+      loopAdditionalSlides: 3, // Number of additional slides for continuous looping
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
       },
+      autoplay: {
+        delay: 2000, // Delay between slides in milliseconds (2 seconds)
+        disableOnInteraction: false, // Enable navigation buttons and pagination while autoplaying
+      },
     });
+
 
     function getSlidesPerView() {
       if (window.innerWidth <= 800) {
