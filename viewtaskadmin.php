@@ -321,12 +321,11 @@ mysqli_free_result($result);
     removetask.addEventListener('click', function(event) {
       event.preventDefault(); // Prevent form submission
 
-      var flag = confirm("Are you sure you want to remove user?");
+      var flag = confirm("Are you sure you want to remove this task?");
       if (flag === true) {
         // Submit the parent form if the user confirms
         this.closest('form').submit();
-        //closeset () methos ley simliar or nearest ancestor of the current element that matches a given selector
-        // harmo form is the closest ancestor
+        window.location.href = 'http://localhost/TMS/viewtaskadmin.php';
       } else {
 
       }

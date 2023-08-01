@@ -705,7 +705,7 @@ textarea {
 
 .dashbottom {
   width: 98%;
-  height: 90px;
+  height: 120px;
   background-color: var(--forms);
   margin: auto;
   margin-top: 8px;
@@ -722,12 +722,13 @@ textarea {
   animation-play-state: paused;
 }
 .dashbottom img {
-  padding-left: 40px;
+  padding-left: 150px;
 }
 
 .logo-slides {
+ 
   margin: auto;
-
+  width: 1200px;
   animation: slide 5s infinite linear;
   display: inline-block;
 }

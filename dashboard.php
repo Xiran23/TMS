@@ -234,35 +234,19 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
       </div>
       <div class="dashbottom">
         <div class="logo-slides">
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
+          
+          <img src="images/nike.png" width="400px" alt="" />
+          <img src="images/khalti.png" width="400px" alt="" />
+          <img src="images/nike.png" width="400px" alt="" />
+          <img src="images/nike.png" width="400px" alt="" />
+          <img src="images/nike.png" width="400px" alt="" />
+          <img src="images/nike.png" width="400px" alt="" />
+          <img src="images/nike.png" width="400px" alt="" />
+          
+          
         </div>
-        <div class="logo-slides">
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
-        </div>
-        <div class="logo-slides">
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
-          <img src="images/icon/shortlist.png" width="90px" alt="" />
-        </div>
+     
+      
       </div>
 
     <?php else : ?>
