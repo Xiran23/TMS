@@ -19,7 +19,9 @@
   <div class="container">
     <div class="adduser-form">
       <form method="post" action="adduser.php" onsubmit="return validation()" enctype="multipart/form-data">
-        <div class="inputflex">
+
+
+        <div class="inputflex align">
           <div class="input-group">
             <label for="fname">First name</label>
             <input id="fname" name="fname" type="text" />
@@ -32,38 +34,23 @@
             <span class="errors" id="slname"></span>
           </div>
 
-
-          <div class="input-group">
-            <label for="profile-pic">Profile Picture :</label>
-            <input id="profile-pic" name="profile-pic" type="file" accept=".jpg, .png" placeholder="" />
-          </div>
-
-        </div>
-
-        <div class="inputflex">
-          <div class="input-group">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" />
-            <span class="errors" id="semail"></span>
-          </div>
-
           <div class="input-group">
             <label for="username">Username</label>
             <input id="username" name="username" type="text" />
             <span class="errors" id="susername"></span>
           </div>
 
-          <div>
-            <label for="">Register as </label>
-            <select name="role" id="">
-              <option value="3">staff</option>
-              <option value="2">Manager</option>
-              <option value="1">admin</option>
-            </select>
-          </div>
+
+
         </div>
 
-        <div class="inputflex">
+        <div class="inputflex align">
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" />
+            <span class="errors" id="semail"></span>
+          </div>
+
           <div class="input-group">
             <label for="password">Password</label>
             <input id="password" name="password" type="password" />
@@ -76,16 +63,36 @@
             <span class="errors" id="srepassword"></span>
           </div>
 
+
+
+        </div>
+
+        <div class="inputflex">
+          <div class="input-group">
+            <label for="profile-pic">Profile Picture :</label>
+            <input id="profile-pic" name="profile-pic" type="file" accept=".jpg, .png" placeholder="" />
+          </div>
+
+          <div>
+            <label for="">Register as </label>
+            <select name="role" id="">
+              <option value="3">staff</option>
+              <option value="2">Manager</option>
+              <option value="1">admin</option>
+            </select>
+          </div>
+
+
           <div class="input-group">
             <label for="pnumber">Phone Number</label>
-            <input id="pnumber" name="pnumber" type="number" />
+            <input id="pnumber" name="pnumber" type="text" />
             <span class="errors" id="sphonenumber"></span>
           </div>
         </div>
 
         <div class="input-group">
-          <label for="description">Description</label>
-          <textarea id="description" name="description" placeholder="Enter employee description..."></textarea>
+          <label for="description">Employee Description</label>
+          <textarea id="description" name="description" placeholder=""></textarea>
         </div>
 
         <input type="submit" name="submit" value="Register" />
@@ -200,13 +207,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $description = $_POST['description'];
 
 
-//   $querysql = "SELECT * FROM users where (username = '$username') ";
-//   $usernamequery = mysqli_query($conn,$querysql);
-//   if (mysqli_num_rows($usernamequery) > 0) {
-//     // echo "USER NAME ALREADYS EXIST";
-//     $errors['username'] = 'USER NAME ALREADYS EXIST';
+  //   $querysql = "SELECT * FROM users where (username = '$username') ";
+  //   $usernamequery = mysqli_query($conn,$querysql);
+  //   if (mysqli_num_rows($usernamequery) > 0) {
+  //     // echo "USER NAME ALREADYS EXIST";
+  //     $errors['username'] = 'USER NAME ALREADYS EXIST';
 
-//   }
+  //   }
 
   // Validate first name
   if (empty($fname)) {
@@ -287,6 +294,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 mysqli_close($conn);
 ?>
-
-
-

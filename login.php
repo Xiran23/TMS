@@ -109,7 +109,7 @@ if (!isset($_SESSION['username'])) {
 
 
           <form method="POST" class="login-form">
-            <h1> ADMIN LOGIN</h1>
+            <h1>LOGIN</h1>
             <div class="input-group">
               <label for="username">Username:</label>
               <input type="text" id="username" name="username" required placeholder="Username" />

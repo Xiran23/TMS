@@ -37,9 +37,9 @@ mysqli_free_result($result);
     <section class="dashviewtask">
 
       <div class="sort-buttons">
-        <button class="button-small" style=" background-color:#ff9999;" id="sort-high">High Priority</button>
-        <button class="button-small" style=" background-color:#ffffb3;" id="sort-medium">Medium Priority</button>
-        <button class="button-small" style=" background-color:#b3ffb3;" id="sort-low">Low Priority</button>
+        <button class="button-small" id="sort-high">High Priority</button>
+        <button class="button-small" id="sort-medium">Medium Priority</button>
+        <button class="button-small" id="sort-low">Low Priority</button>
         <button class="button-small" id="sort-all">All Tasks</button>
       </div>
 
@@ -130,8 +130,8 @@ mysqli_free_result($result);
                     <div class="task-button">
                       <!-- <button class="btn-primary">Accept task</button> -->
                       <form method="post" action="modifytask.php">
-                      <input name="userid" type="hidden" value="<?= $task["task_id"] ?>">
-                      <input class="btn-primary" type="submit" value="Done" id="" name="done">
+                        <input name="userid" type="hidden" value="<?= $task["task_id"] ?>">
+                        <input class="btn-primary" type="submit" value="Done" id="" name="done">
                       </form>
                     </div>
                   <?php else : ?>
@@ -153,18 +153,18 @@ mysqli_free_result($result);
 
 
               </div>
-<?php if($task['status']=='in_progress' || $task['status']=='pending'): ?>
-              <div class="bottom-card">
-                <div class="remaining-time" data-start-date="<?php echo $task['created_at']; ?>" data-end-date="<?php echo $task['due_date']; ?>"></div>
-              </div>
+              <?php if ($task['status'] == 'in_progress' || $task['status'] == 'pending') : ?>
+                <div class="bottom-card">
+                  <div class="remaining-time" data-start-date="<?php echo $task['created_at']; ?>" data-end-date="<?php echo $task['due_date']; ?>"></div>
+                </div>
 
-              <?php else :?>
+              <?php else : ?>
                 <div class="bottom-card">
 
                   TASK COMPLETED
                 </div>
 
-                <?php endif; ?>
+              <?php endif; ?>
 
 
             </div>
@@ -196,29 +196,29 @@ mysqli_free_result($result);
   console.log(currenttime);
 
   var remainingTimeELements = document.getElementsByClassName("remaining-time");
-  var gettaskbutton =document.getElementsByClassName('task-button');
-  
+  var gettaskbutton = document.getElementsByClassName('task-button');
+
   function updateRemainingTime() {
     var now = new Date();
     // console.log(now);
     for (var i = 0; i < remainingTimeELements.length; i++) {
       // line 86 for refernce <!-- For example, a data-abc-def attribute corresponds to dataset.abcDef -->
       var startDate = new Date(remainingTimeELements[i].dataset.startDate);
-      
+
       var endDate = new Date(remainingTimeELements[i].dataset.endDate);
       var remainingTime = endDate - now;
       console.log(remainingTime);
       if (remainingTime > 0) {
-        
-        
+
+
         var days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
         var hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
-        
+
         remainingTimeELements[i].innerHTML = "Remaining Time: " + days + "d " + hours + "h " + minutes + "m " + seconds + "s";
       } else {
-        gettaskbutton[i].style.display='none';
+        gettaskbutton[i].style.display = 'none';
         remainingTimeELements[i].innerHTML = "Time's Up!";
 
       }
