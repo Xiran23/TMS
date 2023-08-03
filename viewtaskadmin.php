@@ -103,7 +103,7 @@ mysqli_free_result($result);
 
                 <div class="task-button">
                   <!-- <button class="btn-primary">Accept task</button> -->
-                  <form method="post" action="updateanddelete.php">
+                  <form method="post"  action="delete.php">
                     <input name="userid" type="hidden" value="<?= $task["task_id"] ?>">
                     <input class="btn-primary" type="submit" value="Edit" id="" name="edit">
                   </form>
@@ -111,9 +111,12 @@ mysqli_free_result($result);
 
                 <div class="task-button">
                   <!-- <button class="btn-primary">dELETE task</button> -->
-                  <form method="post" action="updateanddelete.php">
+                  <form method="post" id="deleteForm" action="updateanddelete.php">
                     <input name="userid" type="hidden" value="<?= $task["task_id"] ?>">
+                    <!-- <input class="btn-primary delete" type="submit" value="Delete" id="delete" name="delete"> -->
                     <input class="btn-primary delete" type="submit" value="Delete" id="delete" name="delete">
+                  
+
                   </form>
                 </div>
 
@@ -323,9 +326,13 @@ mysqli_free_result($result);
 
       var flag = confirm("Are you sure you want to remove this task?");
       if (flag === true) {
+        document.getElementById('deleteForm').submit()
+        this.submit();
         // Submit the parent form if the user confirms
-        this.closest('form').submit();
-        window.location.href = 'http://localhost/TMS/viewtaskadmin.php';
+        // this.closest('form').submit();
+        // window.location.href = 'http://localhost/TMS/viewtaskadmin.php';
+        // window.location.href = 'updateanddelete.php';
+
       } else {
 
       }
