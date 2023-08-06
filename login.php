@@ -90,14 +90,14 @@ if (!isset($_SESSION['username'])) {
     <nav class="navbar">
       <ul class="nav-list">
         <div class="logo">
-          <img src="images/mountain.png" alt="" />
+          <img src="images/picture2.png" alt="" />
         </div>
       </ul>
 
       <div class="right-part-nav">
         <!-- <button class="btn">Sign up</button> -->
-
-        <button class="btn">About us</button>
+<a class="" href="http://localhost/TMS/dist/index.html"><button class="btn">About us</button></a>
+        
       </div>
     </nav>
 
