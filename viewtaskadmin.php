@@ -11,6 +11,7 @@ $result = mysqli_query($conn, $query);
 $tasks = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 mysqli_free_result($result);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,6 +34,7 @@ mysqli_free_result($result);
   <?php include "inc/header.php"; ?>
 
   <div class="container">
+
 
     <section class="dashviewtask">
 
@@ -103,7 +105,7 @@ mysqli_free_result($result);
 
                 <div class="task-button">
                   <!-- <button class="btn-primary">Accept task</button> -->
-                  <form method="post"  action="delete.php">
+                  <form method="post"  action=" delete.php">
                     <input name="userid" type="hidden" value="<?= $task["task_id"] ?>">
                     <input class="btn-primary" type="submit" value="Edit" id="" name="edit">
                   </form>
@@ -137,7 +139,7 @@ mysqli_free_result($result);
 
 
             </div>
-            <?php if ($task['status'] == 'inprogress' && $task['status'] == 'pending') : ?>
+            <?php if ($task['status'] == 'in_progress' || $task['status'] == 'pending') : ?>
               <div class="bottom-card">
                 <div class="remaining-time" data-start-date="<?php echo $task['created_at']; ?>" data-end-date="<?php echo $task['due_date']; ?>"></div>
               </div>
