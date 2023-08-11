@@ -492,7 +492,7 @@ textarea {
 .task-description {
   padding: 5px;
   margin-left: 17px;
-  font-size: 25px;
+  font-size: px;
   max-width: 970px;
   color: var(--task_description);
 }

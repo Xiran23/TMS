@@ -40,6 +40,7 @@
         <thead>
           <tr class="curve">
 
+            <th scope="col">S/n</th>
             <th scope="col">USER_ID</th>
             <th scope="col">first name</th>
             <th scope="col">last name</th>
@@ -49,10 +50,10 @@
             <th scope="col">Total task</th>
             <th scope="col">Remaning task</th>
             <th scope="col">completed task</th>
-            <th scope="col">password</th>
+        
             <th scope="col">phonenumber</th>
             <?php if ($_SESSION['role'] == 1) : ?>
-              <th scope="col">operation</th>
+              <th scope="col" colspan="2">operation</th>
             <?php endif ?>
 
           </tr>
@@ -61,13 +62,15 @@
 
           <?php
 
-          $sql = "SELECT * FROM `Users`; ";
+          $sql = "SELECT * FROM `Users` ";
 
           $result = mysqli_query($conn, $sql);
 
           if ($result) {
+            $sn =0  ;
 
             while ($row = mysqli_fetch_assoc($result)) {
+
               $id = $row['id'];
               $firstname = $row['firstname'];
               $lastname = $row['lastname'];
@@ -76,6 +79,7 @@
               $role = $row['role'];
               $password = $row['password'];
               $phonenumber = $row['phonenumber'];
+              $sn++;
 
               $user_id = $id;
               $queryuserstotaltask = "SELECT COUNT(*) AS usertotaltask from tasks WHERE user_id  = $user_id";
@@ -116,11 +120,13 @@
               $deletebutton = " ";
               if ($_SESSION['role'] == 1) {
                 $deletebutton = '<td> <button class=" delete" ><a class="userdelet" href="userdelete.php?deleteid=' . $id . '"><i class="fas fa-trash"></i></a></button> </td>';
+                $editbutton = '<td> <button class="edit" ><a class="userdelet" href="useredit.php?editid=' . $id . '"><i class="fas fa-edit"></i></a></button> </td>';
               }
               echo '
 
 <tr>
-<td scope="row">' . $id . '</td>
+   <td>'.$sn.'</td>
+<td scope="row">00' . $id . '</td>
 <td>' . $firstname . '</td>
 <td>' . $lastname . '</td>
 <td>' . $username . '</td>
@@ -129,10 +135,11 @@
 <td>' . $totalusertasks . '</td>
 <td>' . $totaluserincompletetask . '</td>
 <td>' . $totalusercompletetask . '</td>
-<td>' . $password . '</td>
+
 <td>' . $phonenumber . '</td>
 
-' . $deletebutton . '
+' . $deletebutton,$editbutton . '
+
 
 
 </tr>
@@ -182,6 +189,20 @@
       }
     });
   }
+
+  var editButtons = document.querySelectorAll(".edit");
+
+for (var i = 0; i < editButtons.length; i++) {
+  var editButton = editButtons[i];
+
+  editButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    var flag = confirm("Are you sure you want to Edit user?");
+    if (flag == true) {
+      window.location.href = this.querySelector("a").href;
+    }
+  });
+}
 
 
 

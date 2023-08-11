@@ -11,6 +11,7 @@ $result = mysqli_query($conn, $query);
 $tasks = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 mysqli_free_result($result);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,6 +36,7 @@ mysqli_free_result($result);
   <?php include "inc/header.php"; ?>
 
   <div class="container">
+
 
     <section class="dashviewtask">
 
@@ -105,7 +107,7 @@ mysqli_free_result($result);
 
                 <div class="task-button">
                   <!-- <button class="btn-primary">Accept task</button> -->
-                  <form method="post" action="updateanddelete.php">
+                  <form method="post"  action=" delete.php">
                     <input name="userid" type="hidden" value="<?= $task["task_id"] ?>">
                     <input class="btn-primary" type="submit" value="Edit" id="" name="edit">
                   </form>
@@ -113,9 +115,12 @@ mysqli_free_result($result);
 
                 <div class="task-button">
                   <!-- <button class="btn-primary">dELETE task</button> -->
-                  <form method="post" action="updateanddelete.php">
+                  <form method="post" id="deleteForm" action="updateanddelete.php">
                     <input name="userid" type="hidden" value="<?= $task["task_id"] ?>">
+                    <!-- <input class="btn-primary delete" type="submit" value="Delete" id="delete" name="delete"> -->
                     <input class="btn-primary delete" type="submit" value="Delete" id="delete" name="delete">
+                  
+
                   </form>
                 </div>
 
@@ -136,7 +141,7 @@ mysqli_free_result($result);
 
 
             </div>
-            <?php if ($task['status'] == 'inprogress' && $task['status'] == 'pending') : ?>
+            <?php if ($task['status'] == 'in_progress' || $task['status'] == 'pending') : ?>
               <div class="bottom-card">
                 <div class="remaining-time" data-start-date="<?php echo $task['created_at']; ?>" data-end-date="<?php echo $task['due_date']; ?>"></div>
               </div>
@@ -325,9 +330,13 @@ mysqli_free_result($result);
 
       var flag = confirm("Are you sure you want to remove this task?");
       if (flag === true) {
+        document.getElementById('deleteForm').submit()
+        this.submit();
         // Submit the parent form if the user confirms
-        this.closest('form').submit();
-        window.location.href = 'http://localhost/TMS/viewtaskadmin.php';
+        // this.closest('form').submit();
+        // window.location.href = 'http://localhost/TMS/viewtaskadmin.php';
+        // window.location.href = 'updateanddelete.php';
+
       } else {
 
       }
