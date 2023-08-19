@@ -42,7 +42,13 @@ $notices = mysqli_fetch_all($result, MYSQLI_ASSOC);
           <div class="note-name">
             <img src="images/icon/user-logo.png" width="40" height="40px" alt="">
             <span><?php echo $notice['username']; ?></span>
-            <button class="clear">clear</button>
+            <form method="post" action="delete_note.php">
+              <input value=" <?php  echo $notice['id'];?>" name="deleteid" type="hidden" >
+              <button  type="submit" class="clear">clear</button>
+              
+
+            </form>
+           
 
           </div>
           <h2 class="note-heading"><?php echo $notice['title']; ?></h2>

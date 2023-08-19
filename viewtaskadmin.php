@@ -105,8 +105,8 @@ mysqli_free_result($result);
 
                 <div class="task-button">
                   <!-- <button class="btn-primary">Accept task</button> -->
-                  <form method="post"  action=" delete.php">
-                    <input name="userid" type="hidden" value="<?= $task["task_id"] ?>">
+                  <form method="post"  action=" updatetask.php">
+                    <input name="taskid" type="hidden" value="<?= $task["task_id"] ?>">
                     <input class="btn-primary" type="submit" value="Edit" id="" name="edit">
                   </form>
                 </div>
