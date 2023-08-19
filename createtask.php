@@ -23,7 +23,7 @@
   ?>
 
 
-  <div class="container">
+  <div class="container background">
 
 
     <div class="create_form">
@@ -46,7 +46,7 @@
           <div class="input-group">
             <label for="emp">Employee:</label>
             <select name="emp" placeholder="please neter the title" onchange="populateInputField()" id="emp"> //multiple is removed
-            <option hidden selected>Select employee...</option>
+              <option hidden selected>Select employee...</option>
 
               <?php
               $employees = $conn->query("SELECT *FROM users");

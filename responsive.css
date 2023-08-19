@@ -8,8 +8,10 @@
     width: 75px;
   }
 
-
-
+  header {
+    left: 75px;
+  }
+}
 
 @media (max-width: 1240px) {
   .container {
@@ -18,12 +20,12 @@
   }
 
   nav {
-    width: 100%;
+    width: 75px;
   }
 
   header {
-    
-    width: 100%;
+    left: 75px;
+    width: 85%;
   }
 }
 
