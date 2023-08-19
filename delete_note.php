@@ -1,11 +1,12 @@
 <?php
 
 include('config/db.php');
+// echo $_POST['deleteid'];
 
-if (isset($_GET['deleteid'])) {
-    $id = $_GET['deleteid'];
+if (isset($_POST['deleteid'])) {
+    $id = $_POST['deleteid'];
 
-    $sql = "DELETE FROM notices WHERE notice_id = $id";
+    $sql = "DELETE FROM notices WHERE id = $id";
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
