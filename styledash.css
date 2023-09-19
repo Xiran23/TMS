@@ -72,17 +72,22 @@ nav {
   display: sticky;
   left: 0;
   top: 0;
-  padding: 20px;
-  overflow: hidden;
+  padding: 2rem;
 }
 
 li {
-  list-style: none;
-  list-style-position: inside;
+  text-align: left;
+
+  padding: 15px;
 }
 
 ul {
   list-style: none;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
@@ -111,27 +116,20 @@ ul {
 }
 
 a {
-  width: 280px;
-  font-weight: bold;
-  font-size: 16px;
   color: var(--anchortag);
-  display: table;
-  padding: 10px;
+}
+
+.link-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
 }
 
 .dashlogo {
-  position: relative;
   width: 40px;
   height: 40px;
-  top: 20px;
-  font-size: 20px;
-  text-align: center;
-}
-
-.nav-item {
-  position: relative;
-  top: 8px;
-  margin-left: 15px;
 }
 
 a:hover {
