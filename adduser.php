@@ -207,14 +207,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $description = $_POST['description'];
 
 
-  //   $querysql = "SELECT * FROM users where (username = '$username') ";
-  //   $usernamequery = mysqli_query($conn,$querysql);
-  //   if (mysqli_num_rows($usernamequery) > 0) {
-  //     // echo "USER NAME ALREADYS EXIST";
-  //     $errors['username'] = 'USER NAME ALREADYS EXIST';
-
-  //   }
-
+ 
   // Validate first name
   if (empty($fname)) {
     $errors['fname'] = 'Please fill in the first name field.';
@@ -275,6 +268,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
   }
 
+  if (empty($username)) {
+    $errors['username'] = 'Please fill in the username field.';
+} else {
+    $query = "SELECT id FROM users WHERE username = '$username'";
+    $result = mysqli_query($conn, $query);
+    if (mysqli_num_rows($result) > 0) {
+        $errors['username'] = 'Username already exists.';
+        echo '<script>document.getElementById("susername").textContent = "' . $errors['username'] . '";</script>';
+      }
+    }
+}
+
+// Validate email
+if (empty($email)) {
+    $errors['email'] = 'Please fill in the email field.';
+} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $errors['email'] = 'Invalid email format.';
+} else {
+    $query = "SELECT id FROM users WHERE email = '$email'";
+    $result = mysqli_query($conn, $query);
+    if (mysqli_num_rows($result) > 0) {
+        $errors['email'] = 'Email already exists.';
+        echo '<script>document.getElementById("semail").textContent = "' . $errors['email'] . '";</script>';
+      }
+    
+}
+
   // If there are no validation errors and profile picture was uploaded successfully, proceed with further processing
   if (empty($errors)) {
     $query = "INSERT INTO users (firstname, lastname, username, email, role, password, phonenumber, profilepic, description) VALUES ('$fname', '$lastname', '$username', '$email', '$role', '$password', '$phonenumber', '$profilepic', '$description')";
@@ -290,7 +310,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       echo $error . '<br />';
     }
   }
-}
+
 
 mysqli_close($conn);
 ?>
