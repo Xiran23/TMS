@@ -45,12 +45,12 @@ $notices = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <img src="images/icon/user-logo.png" width="40" height="40px" alt="">
             <span><?php echo $notice['username']; ?></span>
             <form method="post" action="delete_note.php">
-              <input value=" <?php  echo $notice['id'];?>" name="deleteid" type="hidden" >
-              <button  type="submit" class="clear">clear</button>
-              
+              <input value=" <?php echo $notice['id']; ?>" name="deleteid" type="hidden">
+              <button type="submit" class="clear">clear</button>
+
 
             </form>
-           
+
 
           </div>
           <h2 class="note-heading"><?php echo $notice['title']; ?></h2>
