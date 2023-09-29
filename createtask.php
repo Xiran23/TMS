@@ -156,6 +156,18 @@
       alert("Description must be filled out");
       return false;
     }
+
+    var selectedDate = new Date(subdate);
+    var currentDate = new Date();
+
+    // Add 5 minutes to the current date and time
+    currentDate.setMinutes(currentDate.getMinutes() + 5);
+
+    // Check if the selected date is in the past or less than 5 minutes in the future
+    if (selectedDate <= currentDate) {
+      alert("Please select a date and time at least 5 minutes in the future.");
+      return false;
+    }
   }
 </script>
 

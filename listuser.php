@@ -116,7 +116,7 @@
                   $roleName = 'helper';
               }
 
-
+              $editbutton="";
               $deletebutton = " ";
               if ($_SESSION['role'] == 1) {
                 $deletebutton = '<td> <button class=" delete" ><a class="userdelet" href="userdelete.php?deleteid=' . $id . '"><i class="fas fa-trash"></i></a></button> </td>';
