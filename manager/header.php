@@ -73,9 +73,7 @@ if (isset($_POST['logout'])) {
         <form method="POST">
           <input type="submit" value="logout" name="logout"><label></label>
         </form>
-        <!--
-              <span class="nav-item"> -->
-        <!-- Logout -->
+
         </span>
       </a>
     </li>

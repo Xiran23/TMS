@@ -75,6 +75,8 @@ if (!isset($_SESSION['username'])) {
 
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" href="images/picture2.png" type="image/png">
+  <link rel="shortcut icon" href="images/picture2.png" type="image/png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
@@ -88,14 +90,14 @@ if (!isset($_SESSION['username'])) {
     <nav class="navbar">
       <ul class="nav-list">
         <div class="logo">
-          <img src="images/mountain.png" alt="" />
+          <img src="images/picture2.png" alt="" />
         </div>
       </ul>
 
       <div class="right-part-nav">
         <!-- <button class="btn">Sign up</button> -->
+        <a class="" href="https://venerable-tanuki-54c9bf.netlify.app/"><button class="btn">About us</button></a>
 
-        <button class="btn">About us</button>
       </div>
     </nav>
 

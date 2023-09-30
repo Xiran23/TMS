@@ -52,6 +52,8 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
   <meta charset="UTF-8" />
+  <link rel="icon" href="images/picture2.png" type="image/png">
+  <link rel="shortcut icon" href="images/picture2.png" type="image/png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styledash.css" />
@@ -234,25 +236,27 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
       </div>
       <div class="dashbottom">
         <div class="logo-slides">
-          
-          <img src="images/nike.png" width="400px" alt="" />
+
           <img src="images/khalti.png" width="400px" alt="" />
-          <img src="images/nike.png" width="400px" alt="" />
-          <img src="images/nike.png" width="400px" alt="" />
-          <img src="images/nike.png" width="400px" alt="" />
-          <img src="images/nike.png" width="400px" alt="" />
-          <img src="images/nike.png" width="400px" alt="" />
-          <img src="images/nike.png" width="400px" alt="" />
           <img src="images/khalti.png" width="400px" alt="" />
-          <img src="images/nike.png" width="400px" alt="" />
-          <img src="images/nike.png" width="400px" alt="" />
-          <img src="images/nike.png" width="400px" alt="" />
-          <img src="images/nike.png" width="400px" alt="" />
-          <img src="images/nike.png" width="400px" alt="" />
-          
+          <img src="images/khalti.png" width="400px" alt="" />
+          <img src="images/khalti.png" width="400px" alt="" />
+          <img src="images/khalti.png" width="400px" alt="" />
+          <img src="images/khalti.png" width="400px" alt="" />
+          <img src="images/khalti.png" width="400px" alt="" />
+          <img src="images/khalti.png" width="400px" alt="" />
+          <img src="images/khalti.png" width="400px" alt="" />
+          <img src="images/khalti.png" width="400px" alt="" />
+          <img src="images/khalti.png" width="400px" alt="" />
+          <img src="images/khalti.png" width="400px" alt="" />
+          <img src="images/khalti.png" width="400px" alt="" />
+          <img src="images/khalti.png" width="400px" alt="" />
+          <img src="images/khalti.png" width="400px" alt="" />
+
+
         </div>
-     
-      
+
+
       </div>
 
     <?php else : ?>

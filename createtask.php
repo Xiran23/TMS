@@ -4,6 +4,8 @@
 
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" href="images/picture2.png" type="image/png">
+  <link rel="shortcut icon" href="images/picture2.png" type="image/png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styledash.css">
@@ -21,7 +23,7 @@
   ?>
 
 
-  <div class="container">
+  <div class="container background">
 
 
     <div class="create_form">
@@ -44,7 +46,7 @@
           <div class="input-group">
             <label for="emp">Employee:</label>
             <select name="emp" placeholder="please neter the title" onchange="populateInputField()" id="emp"> //multiple is removed
-            <option hidden selected>Select employee...</option>
+              <option hidden selected>Select employee...</option>
 
               <?php
               $employees = $conn->query("SELECT *FROM users");
