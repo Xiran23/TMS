@@ -96,8 +96,8 @@ if (!isset($_SESSION['username'])) {
 
       <div class="right-part-nav">
         <!-- <button class="btn">Sign up</button> -->
-<a class="" href="http://localhost/TMS/dist/index.html"><button class="btn">About us</button></a>
-        
+        <a class="" href="https://venerable-tanuki-54c9bf.netlify.app/"><button class="btn">About us</button></a>
+
       </div>
     </nav>
 
